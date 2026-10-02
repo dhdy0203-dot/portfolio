@@ -25,15 +25,31 @@
       <div class="track"><div class="fill" data-level="${s.level}"></div></div>
     </div>`).join("");
 
-  const timeline = (items) => items.map(item => `
+  const educationTimeline = (items) => items.map(item => `
     <article class="timeline-item">
       <span class="timeline-date">${item.date}</span>
       <h3>${item.title}</h3>
       <h4>${item.subtitle}</h4>
       <p>${item.description}</p>
     </article>`).join("");
-  $("#education-list").innerHTML = timeline(d.education);
-  $("#experience-list").innerHTML = timeline(d.experience);
+
+  const experienceTimeline = (items) => items.map(item => {
+    const meta = (item.role || item.organization) ? `
+      <div class="timeline-meta">
+        <span>${item.role || ""}</span>
+        <span>${item.organization || ""}</span>
+      </div>` : "";
+    return `
+      <article class="timeline-item">
+        <span class="timeline-date">${item.date}</span>
+        <h3>${item.title}</h3>
+        ${meta}
+        <p>${item.description}</p>
+      </article>`;
+  }).join("");
+
+  $("#education-list").innerHTML = educationTimeline(d.education);
+  $("#experience-list").innerHTML = experienceTimeline(d.experience);
 
   const categories = ["all", ...new Set(d.projects.map(p => p.category))];
   $("#filters").innerHTML = categories.map((c, i) =>
@@ -67,7 +83,6 @@
   $("#contact-info").innerHTML = `
     <p class="contact-line"><strong>Name</strong> ${d.name}</p>
     <p class="contact-line"><strong>Email</strong> <a href="mailto:${c.email}">${c.email}</a></p>
-    <p class="contact-line"><strong>GitHub</strong> <a href="${c.github}" target="_blank" rel="noreferrer">${c.github.replace("https://","")}</a></p>
     <p class="contact-line"><strong>Location</strong> ${c.location}</p>`;
   $("#sidebar-social").innerHTML = d.social.map(x =>
     `<a href="${x.url}" target="_blank" rel="noreferrer" aria-label="${x.label}">${x.label}</a>`

@@ -15,8 +15,8 @@ window.PORTFOLIO_DATA = {
     {
       date: "2023 - 2027",
       title: "University of Seoul",
-      subtitle: "Statistics",
-      description: "유도현"
+      subtitle: "Department of Statistics",
+      description: "Minor: School of Economics"
     },
     {
       date: "2026.01.19 - 2026.01.23",
@@ -36,43 +36,50 @@ window.PORTFOLIO_DATA = {
     {
       date: "2025",
       title: "운영 피드백 기반 위기아동 모델 재학습을 통한 예측 개선 연구 참여",
-      subtitle: "Role: 학부연구원 | 주관기관: 사회보장정보원",
+      role: "학부연구원",
+      organization: "사회보장정보원",
       description: "EDA, 데이터 구축, 모델 성능 개선 참여"
     },
     {
       date: "2026",
       title: "ESG 인증 이미지 자동 심사",
-      subtitle: "Role: 프로젝트 참여 | 건강보험심사평가원 × SK AX",
+      role: "",
+      organization: "건강보험심사평가원 × SK AX",
       description: "인증 데이터 EDA, AI 자동 심사 로직 설계, 검수 자동화 성능 개선"
     },
     {
       date: "2025 - 2026",
       title: "학부연구생 연구 활동",
-      subtitle: "Role: 학부연구생 | Optim Lab",
+      role: "학부연구생",
+      organization: "Optim Lab",
       description: "LLM 데이터 수집, 모델 분석, Knowledge Graph 연구 참여"
     },
     {
       date: "2026",
       title: "수익형 웹사이트 구축",
-      subtitle: "Role: 개인 프로젝트",
+      role: "",
+      organization: "",
       description: "AWS Lightsail 서버 구축, 도메인 연동, 웹서비스 배포 및 운영"
     },
     {
       date: "2026",
       title: "자산 변동성 예측 프로젝트",
-      subtitle: "Role: 금융시계열 분석",
+      role: "",
+      organization: "",
       description: "GARCH 계열 모형을 활용한 자산 변동성 분석 및 예측"
     },
     {
       date: "2026",
       title: "동적상관계수 분석 프로젝트",
-      subtitle: "Role: 시계열 데이터 분석",
+      role: "",
+      organization: "",
       description: "자산 간 동적 상관관계 분석, 데이터 전처리 및 결과 해석"
     },
     {
       date: "2025",
       title: "WSDM 공간데이터 분석 프로젝트",
-      subtitle: "Role: 데이터 분석",
+      role: "",
+      organization: "",
       description: "공간데이터 전처리, 입지 요인 분석, 다기준 의사결정 방법론 적용"
     }
   ],
@@ -87,8 +94,7 @@ window.PORTFOLIO_DATA = {
   ],
 
   contact: {
-    email: "you@example.com",
-    github: "https://github.com/dhdy0203-dot",
+    email: "d55hyun@uos.ac.kr",
     location: "Korea"
   },
 
