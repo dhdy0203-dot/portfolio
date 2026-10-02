@@ -1,8 +1,18 @@
-
 (() => {
   const d = window.PORTFOLIO_DATA;
   const $ = (s) => document.querySelector(s);
   const $$ = (s) => [...document.querySelectorAll(s)];
+
+  const logoGroup = (logos = []) => {
+    if (!logos.length) return "";
+    return `<div class="item-logo-group" aria-hidden="true">${logos.map(logo => {
+      const classes = ["item-logo-badge", logo.className || ""].filter(Boolean).join(" ");
+      if (logo.type === "mark") {
+        return `<span class="${classes}" title="${logo.alt || logo.text || ""}"><span class="logo-mark-text">${logo.text || ""}</span></span>`;
+      }
+      return `<span class="${classes}" title="${logo.alt || ""}"><span class="logo-fallback">${logo.fallback || ""}</span><img src="${logo.src}" alt="" loading="lazy" onerror="this.style.display='none'" /></span>`;
+    }).join("")}</div>`;
+  };
 
   document.title = `${d.name} | Portfolio`;
   $("#hero-name").textContent = d.name;
@@ -26,11 +36,12 @@
     </div>`).join("");
 
   const educationTimeline = (items) => items.map(item => `
-    <article class="timeline-item">
+    <article class="timeline-item ${item.logos?.length ? "has-logo" : ""}">
       ${item.date ? `<span class="timeline-date">${item.date}</span>` : ""}
       <h3>${item.title}</h3>
       ${item.subtitle ? `<h4>${item.subtitle}</h4>` : ""}
       ${item.description ? `<p>${item.description}</p>` : ""}
+      ${logoGroup(item.logos)}
     </article>`).join("");
 
   const experienceTimeline = (items) => items.map(item => {
@@ -51,7 +62,7 @@
   $("#education-list").innerHTML = educationTimeline(d.education);
 
   const collaborationTimeline = (items) => items.map(item => `
-    <article class="featured-collab-card">
+    <article class="featured-collab-card ${item.logos?.length ? "has-logo" : ""}">
       <div class="featured-collab-top">
         <span class="featured-date">${item.date}</span>
         <span class="featured-org">${item.organization || ""}</span>
@@ -59,6 +70,7 @@
       <h3>${item.title}</h3>
       ${item.role ? `<p class="featured-role">${item.role}</p>` : ""}
       <p>${item.description}</p>
+      ${logoGroup(item.logos)}
     </article>`).join("");
 
   $("#collaboration-list").innerHTML = collaborationTimeline(d.externalCollaboration || []);

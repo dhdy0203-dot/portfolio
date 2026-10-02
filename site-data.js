@@ -1,7 +1,7 @@
 window.PORTFOLIO_DATA = {
   name: "유도현",
-  roles: ["모든 일은 설득의 과정이며, 통계는 그 설득에 근거를 더한다고 믿습니다."],
-  about: "여기에 자기소개를 넣으세요. 어떤 개발자인지, 어떤 문제를 좋아하는지, 어떤 기술과 경험을 갖고 있는지를 3~5문장 정도로 정리하면 좋습니다.",
+  roles: ["모든 일은 설득의 과정이며\n통계는 그 설득에 근거를 더한다고 믿습니다."],
+  about: "분석하고 의미있는 것을 좋아해 통계학과로 진학했습니다. 과학, 수학, 문학 모두 다 좋아하며 취미는 자료 수집하기, 미래의 꿈은 제 이름으로 된 소설 책을 집필하는 것이며 이를 위해 공상의 나날을 보내고 있습니다.",
   resumeUrl: "#",
 
   skills: [
@@ -16,7 +16,10 @@ window.PORTFOLIO_DATA = {
       date: "2023 - 2027",
       title: "University of Seoul",
       subtitle: "Department of Statistics",
-      description: "Minor in Economics, School of Economics"
+      description: "Minor in Economics, School of Economics",
+      logos: [
+        { src: "https://engraduate.uos.ac.kr/design/theme/eng/images/sub/about/si4_ui01.jpg", alt: "University of Seoul", className: "logo-crop-uos", fallback: "UOS" }
+      ]
     },
     {
       date: "2026.01.19 - 2026.01.23",
@@ -38,14 +41,21 @@ window.PORTFOLIO_DATA = {
       title: "운영 피드백 기반 위기아동 모델 재학습을 통한 예측 개선 연구 참여",
       role: "학부연구원",
       organization: "사회보장정보원",
-      description: "EDA, 데이터 구축, 모델 성능 개선 참여"
+      description: "EDA, 데이터 구축, 모델 성능 개선 참여",
+      logos: [
+        { src: "https://ssis.or.kr/images/renew/sub/ci_s1.png", alt: "한국사회보장정보원", className: "logo-fit-contain", fallback: "SSiS" }
+      ]
     },
     {
       date: "2026",
       title: "ESG 인증 이미지 자동 심사",
       role: "",
       organization: "건강보험심사평가원 × SK AX",
-      description: "인증 데이터 EDA, AI 자동 심사 로직 설계, 검수 자동화 성능 개선"
+      description: "인증 데이터 EDA, AI 자동 심사 로직 설계, 검수 자동화 성능 개선",
+      logos: [
+        { src: "https://www.hira.or.kr/images/contents/renew_bg_ci1.png", alt: "건강보험심사평가원", className: "logo-zoom-hira", fallback: "HIRA" },
+        { src: "https://www.skax.co.kr/logo.svg", alt: "SK AX", className: "logo-fit-contain logo-skax", fallback: "SK AX" }
+      ]
     }
   ],
 
@@ -80,7 +90,7 @@ window.PORTFOLIO_DATA = {
     },
     {
       date: "2025.08.01 - 2025.08.25",
-      title: "DACON 식음업장 메뉴 수요 예측 AI 온라인 해커톤",
+      title: "식음업장 메뉴 수요 예측 AI 온라인 해커톤",
       role: "",
       organization: "DACON",
       description: "XGBoost와 시계열 모델 등을 결합해 메뉴 수요를 예측하고 상위 14% 성적 달성"
@@ -89,7 +99,7 @@ window.PORTFOLIO_DATA = {
       date: "2025.02.01 - 2025.02.27 09:59",
       title: "난임 환자 대상 임신 성공 여부 예측 AI 온라인 해커톤",
       role: "",
-      organization: "",
+      organization: "DACON",
       description: "CatBoost·LightGBM 등 부스팅 모델을 활용해 임신 성공 여부를 예측하고 상위 10% 성적 달성"
     }
   ],
@@ -152,19 +162,28 @@ window.PORTFOLIO_DATA = {
       date: "",
       title: "OPIc",
       subtitle: "Intermediate High (IH)",
-      description: ""
+      description: "",
+      logos: [
+        { type: "mark", text: "OPIc", alt: "OPIc", className: "logo-mark-opic" }
+      ]
     },
     {
       date: "2025.06.01",
       title: "제22회 새벽강변 국제마라톤대회",
       subtitle: "10km",
-      description: "완주 기록 00:55:06.25"
+      description: "완주 기록 00:55:06.25",
+      logos: [
+        { type: "mark", text: "10K", alt: "10km Marathon", className: "logo-mark-run" }
+      ]
     },
     {
       date: "2026.06.05",
       title: "데이터분석 준전문가 (ADsP)",
       subtitle: "한국데이터산업진흥원",
-      description: "국가공인 자격"
+      description: "국가공인 자격",
+      logos: [
+        { src: "https://www.kdata.or.kr/_img/web/pc/cont/symbol.png", alt: "한국데이터산업진흥원", className: "logo-crop-kdata", fallback: "K-DATA" }
+      ]
     }
   ],
 
