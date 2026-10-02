@@ -96,12 +96,6 @@ window.PORTFOLIO_DATA = {
 
   awardsScholarships: [
     {
-      date: "2025.06.01",
-      title: "제22회 새벽강변 국제마라톤대회",
-      subtitle: "10km",
-      description: "완주 기록 00:55:06.25"
-    },
-    {
       date: "2026.09.18",
       title: "공공기관 AI 프로젝트 챌린지 Job아라! 우수상",
       subtitle: "서울시립대학교 AI·SW융합교육원",
@@ -128,6 +122,12 @@ window.PORTFOLIO_DATA = {
   ],
 
   certifications: [
+    {
+      date: "2025.06.01",
+      title: "제22회 새벽강변 국제마라톤대회",
+      subtitle: "10km",
+      description: "완주 기록 00:55:06.25"
+    },
     {
       date: "2026.06.05",
       title: "데이터분석 준전문가 (ADsP)",
