@@ -27,10 +27,10 @@
 
   const educationTimeline = (items) => items.map(item => `
     <article class="timeline-item">
-      <span class="timeline-date">${item.date}</span>
+      ${item.date ? `<span class="timeline-date">${item.date}</span>` : ""}
       <h3>${item.title}</h3>
-      <h4>${item.subtitle}</h4>
-      <p>${item.description}</p>
+      ${item.subtitle ? `<h4>${item.subtitle}</h4>` : ""}
+      ${item.description ? `<p>${item.description}</p>` : ""}
     </article>`).join("");
 
   const experienceTimeline = (items) => items.map(item => {
@@ -49,6 +49,19 @@
   }).join("");
 
   $("#education-list").innerHTML = educationTimeline(d.education);
+
+  const collaborationTimeline = (items) => items.map(item => `
+    <article class="featured-collab-card">
+      <div class="featured-collab-top">
+        <span class="featured-date">${item.date}</span>
+        <span class="featured-org">${item.organization || ""}</span>
+      </div>
+      <h3>${item.title}</h3>
+      ${item.role ? `<p class="featured-role">${item.role}</p>` : ""}
+      <p>${item.description}</p>
+    </article>`).join("");
+
+  $("#collaboration-list").innerHTML = collaborationTimeline(d.externalCollaboration || []);
   $("#experience-list").innerHTML = experienceTimeline(d.experience);
 
   const sideProjectTimeline = (items) => items.map(item => `

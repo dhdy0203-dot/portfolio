@@ -14,13 +14,14 @@
   <div class="page">
     <aside class="sidebar">
       <div class="profile-art">
-        <img src="assets/profile.svg" alt="Profile placeholder" />
+        <img src="assets/profile-photo.png" alt="Profile photo" />
       </div>
       <button class="menu-button" aria-label="메뉴 열기">☰</button>
       <nav class="nav" aria-label="주요 메뉴">
         <a href="#home">Home <span>⌂</span></a>
         <a href="#about">About <span>◎</span></a>
-        <a href="#experience">Experience <span>★</span></a>
+        <a href="#collaboration">Collaboration <span>★</span></a>
+        <a href="#experience">Experience <span>◎</span></a>
         <a href="#side-projects">Side Projects <span>＋</span></a>
         <a href="#skills">Skills <span>◆</span></a>
         <a href="#awards">Awards <span>◇</span></a>
@@ -39,7 +40,7 @@
           <p class="roles" id="hero-roles"></p>
         </div>
         <div class="hero-figure" aria-hidden="true">
-          <img src="assets/hero.svg" alt="" />
+          <img src="assets/hero-photo.png" alt="Profile photo" />
         </div>
       </section>
 
@@ -50,8 +51,7 @@
 
       <section class="panel" id="about">
         <header class="section-title"><h2>About Me</h2></header>
-        <div class="about-grid">
-          <img class="about-image" src="assets/about.svg" alt="About placeholder" />
+        <div class="about-grid about-grid-text-only">
           <div>
             <p id="about-text"></p>
             <a class="button" href="#contact">Contact Me</a>
@@ -67,6 +67,11 @@
       <section class="panel" id="education">
         <header class="section-title"><h2>Education</h2></header>
         <div class="timeline-grid" id="education-list"></div>
+      </section>
+
+      <section class="panel featured-panel" id="collaboration">
+        <header class="section-title"><h2>External Collaboration</h2></header>
+        <div class="featured-collab-grid" id="collaboration-list"></div>
       </section>
 
       <section class="panel" id="experience">

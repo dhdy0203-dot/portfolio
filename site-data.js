@@ -32,7 +32,7 @@ window.PORTFOLIO_DATA = {
     }
   ],
 
-  experience: [
+  externalCollaboration: [
     {
       date: "2025",
       title: "운영 피드백 기반 위기아동 모델 재학습을 통한 예측 개선 연구 참여",
@@ -46,7 +46,10 @@ window.PORTFOLIO_DATA = {
       role: "",
       organization: "건강보험심사평가원 × SK AX",
       description: "인증 데이터 EDA, AI 자동 심사 로직 설계, 검수 자동화 성능 개선"
-    },
+    }
+  ],
+
+  experience: [
     {
       date: "2025 - 2026",
       title: "학부연구생 연구 활동",
@@ -122,6 +125,12 @@ window.PORTFOLIO_DATA = {
   ],
 
   certifications: [
+    {
+      date: "",
+      title: "OPIc",
+      subtitle: "Intermediate High (IH)",
+      description: ""
+    },
     {
       date: "2025.06.01",
       title: "제22회 새벽강변 국제마라톤대회",
