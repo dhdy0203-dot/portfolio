@@ -222,3 +222,37 @@ footer p{margin:0}.credit{opacity:.72}
   font-weight:500;
   margin-bottom:10px!important
 }
+
+/* v11 refinements: cleaner hero copy and profile photo moved to Contact */
+.nav{padding-top:28px}
+.roles{
+  font-size:clamp(16px,1.45vw,20px);
+  line-height:1.75;
+  max-width:650px;
+  word-break:keep-all;
+  overflow-wrap:normal;
+  text-wrap:pretty;
+}
+.contact-grid{
+  grid-template-columns:minmax(170px,.72fr) minmax(170px,.72fr) minmax(280px,1.35fr);
+  align-items:start;
+  gap:28px;
+}
+.contact-photo-wrap{width:100%;max-width:230px}
+.contact-photo{
+  display:block;
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  object-position:45% 34%;
+  border-radius:2px;
+}
+@media(max-width:900px){
+  .contact-grid{grid-template-columns:minmax(180px,.75fr) 1.25fr}
+  .contact-photo-wrap{grid-row:1 / span 2}
+}
+@media(max-width:720px){
+  .contact-grid{grid-template-columns:1fr}
+  .contact-photo-wrap{grid-row:auto;max-width:320px;margin:0 auto 8px}
+  .roles{font-size:16px;line-height:1.7}
+}

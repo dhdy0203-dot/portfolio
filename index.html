@@ -13,9 +13,6 @@
 <body>
   <div class="page">
     <aside class="sidebar">
-      <div class="profile-art">
-        <img src="assets/profile-photo.png" alt="Profile photo" />
-      </div>
       <button class="menu-button" aria-label="메뉴 열기">☰</button>
       <nav class="nav" aria-label="주요 메뉴">
         <a href="#home">Home <span>⌂</span></a>
@@ -103,6 +100,9 @@
       <section class="panel" id="contact">
         <header class="section-title"><h2>Contact</h2></header>
         <div class="contact-grid">
+          <div class="contact-photo-wrap">
+            <img class="contact-photo" src="assets/profile-photo.png" alt="유도현 프로필 사진" />
+          </div>
           <div id="contact-info"></div>
           <form class="contact-form" onsubmit="event.preventDefault(); alert('정적 사이트 데모입니다. 폼 서비스(Formspree 등)를 연결하면 실제 전송할 수 있어요.');">
             <input type="text" placeholder="Your Name" aria-label="Your Name">
