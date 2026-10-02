@@ -50,6 +50,8 @@
 
   $("#education-list").innerHTML = educationTimeline(d.education);
   $("#experience-list").innerHTML = experienceTimeline(d.experience);
+  $("#awards-list").innerHTML = educationTimeline(d.awardsScholarships || []);
+  $("#certifications-list").innerHTML = educationTimeline(d.certifications || []);
 
   const categories = ["all", ...new Set(d.projects.map(p => p.category))];
   $("#filters").innerHTML = categories.map((c, i) =>
