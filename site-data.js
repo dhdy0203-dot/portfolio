@@ -56,13 +56,6 @@ window.PORTFOLIO_DATA = {
     },
     {
       date: "2026",
-      title: "수익형 웹사이트 구축",
-      role: "",
-      organization: "",
-      description: "AWS Lightsail 서버 구축, 도메인 연동, 웹서비스 배포 및 운영"
-    },
-    {
-      date: "2026",
       title: "자산 변동성 예측 프로젝트",
       role: "",
       organization: "금융시계열",
@@ -84,7 +77,30 @@ window.PORTFOLIO_DATA = {
     }
   ],
 
+  sideProjects: [
+    {
+      date: "2026",
+      title: "trade.qqick.com",
+      organization: "Python, Streamlit, SQLite, AWS Lightsail",
+      description: "자산 종목 모니터링 사이트",
+      url: "https://trade.qqick.com"
+    },
+    {
+      date: "2026",
+      title: "Youtube 실시간 번역 자막",
+      organization: "Chrome Extension, Gemini API",
+      description: "Gemini API와 연동하여 Chrome Extension 형태로 제작",
+      url: ""
+    }
+  ],
+
   awardsScholarships: [
+    {
+      date: "2025.06.01",
+      title: "제22회 새벽강변 국제마라톤대회",
+      subtitle: "10km",
+      description: "완주 기록 00:55:06.25"
+    },
     {
       date: "2026.09.18",
       title: "공공기관 AI 프로젝트 챌린지 Job아라! 우수상",

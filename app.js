@@ -50,6 +50,16 @@
 
   $("#education-list").innerHTML = educationTimeline(d.education);
   $("#experience-list").innerHTML = experienceTimeline(d.experience);
+
+  const sideProjectTimeline = (items) => items.map(item => `
+    <article class="timeline-item">
+      <span class="timeline-date">${item.date}</span>
+      <h3>${item.url ? `<a class="timeline-title-link" href="${item.url}" target="_blank" rel="noreferrer">${item.title}</a>` : item.title}</h3>
+      ${item.organization ? `<div class="timeline-meta"><span></span><span>${item.organization}</span></div>` : ""}
+      <p>${item.description}</p>
+    </article>`).join("");
+
+  $("#side-projects-list").innerHTML = sideProjectTimeline(d.sideProjects || []);
   $("#awards-list").innerHTML = educationTimeline(d.awardsScholarships || []);
   $("#certifications-list").innerHTML = educationTimeline(d.certifications || []);
 
