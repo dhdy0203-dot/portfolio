@@ -10,7 +10,7 @@
       if (logo.type === "mark") {
         return `<span class="${classes}" title="${logo.alt || logo.text || ""}"><span class="logo-mark-text">${logo.text || ""}</span></span>`;
       }
-      return `<span class="${classes}" title="${logo.alt || ""}"><span class="logo-fallback">${logo.fallback || ""}</span><img src="${logo.src}" alt="" loading="lazy" onerror="this.style.display='none'" /></span>`;
+      return `<span class="${classes}" title="${logo.alt || ""}"><img src="${logo.src}" alt="" loading="lazy" onerror="this.style.display='none'" /></span>`;
     }).join("")}</div>`;
   };
 

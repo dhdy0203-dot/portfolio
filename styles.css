@@ -369,3 +369,45 @@ footer p{margin:0}.credit{opacity:.72}
   .logo-mark-opic .logo-mark-text{font-size:17px}
   .logo-mark-run .logo-mark-text{font-size:18px}
 }
+
+/* v14: logo-only badges; preserve all content geometry */
+.logo-fallback{display:none!important}
+.logo-hira img{padding:9px;object-fit:contain}
+.logo-coss img{padding:8px;object-fit:contain}
+.logo-lg-ai img{padding:13px 8px;object-fit:contain}
+.logo-kma img{padding:7px;object-fit:contain}
+
+/* Show the complete UOS emblem from the official guideline sheet instead of clipping it. */
+.logo-crop-uos img{
+  position:absolute;
+  z-index:2;
+  width:240%;
+  height:auto;
+  max-width:none;
+  left:-59%;
+  top:6%;
+}
+
+/* Education logos remain an overlay on the right so text coordinates do not shift. */
+#education-list .timeline-item .item-logo-group{
+  right:20px;
+  top:50%;
+  bottom:auto;
+  transform:translateY(-50%);
+}
+#education-list .timeline-item:first-child .item-logo-group{
+  right:20px;
+  top:50%;
+  bottom:auto;
+  transform:translateY(-50%);
+}
+
+@media(max-width:720px){
+  #education-list .timeline-item .item-logo-group,
+  #education-list .timeline-item:first-child .item-logo-group{
+    position:static;
+    transform:none;
+    margin-top:16px;
+    justify-content:flex-end;
+  }
+}

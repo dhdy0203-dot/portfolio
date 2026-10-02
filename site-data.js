@@ -18,20 +18,26 @@ window.PORTFOLIO_DATA = {
       subtitle: "Department of Statistics",
       description: "Minor in Economics, School of Economics",
       logos: [
-        { src: "https://engraduate.uos.ac.kr/design/theme/eng/images/sub/about/si4_ui01.jpg", alt: "University of Seoul", className: "logo-crop-uos", fallback: "UOS" }
+        { src: "https://engraduate.uos.ac.kr/design/theme/eng/images/sub/about/si4_ui01.jpg", alt: "University of Seoul", className: "logo-crop-uos" }
       ]
     },
     {
       date: "2026.01.19 - 2026.01.23",
-      title: "통계 D-Express 캠프",
+      title: "동계 D-Express 캠프",
       subtitle: "서울대학교 빅데이터 혁신융합대학사업단",
-      description: "(공유) 온톨로지 및 지식그래프 과정 이수"
+      description: "(공유) 온톨로지 및 지식그래프 과정 이수",
+      logos: [
+        { src: "https://coss.ac.kr/img/coss_logo.png", alt: "COSS", className: "logo-fit-contain logo-coss" }
+      ]
     },
     {
       date: "2025.07.01 - 2025.08.25",
       title: "2025 LG Aimers [2회차]",
       subtitle: "(주)엘지경영개발원 AI연구원",
-      description: "IT(IT) 과정 이수"
+      description: "IT(IT) 과정 이수",
+      logos: [
+        { src: "https://www.lgresearch.ai/img/common/logo_en.png", alt: "LG AI Research", className: "logo-fit-contain logo-lg-ai" }
+      ]
     }
   ],
 
@@ -43,7 +49,7 @@ window.PORTFOLIO_DATA = {
       organization: "사회보장정보원",
       description: "EDA, 데이터 구축, 모델 성능 개선 참여",
       logos: [
-        { src: "https://ssis.or.kr/images/renew/sub/ci_s1.png", alt: "한국사회보장정보원", className: "logo-fit-contain", fallback: "SSiS" }
+        { src: "https://ssis.or.kr/images/renew/sub/ci_s1.png", alt: "한국사회보장정보원", className: "logo-fit-contain" }
       ]
     },
     {
@@ -53,8 +59,7 @@ window.PORTFOLIO_DATA = {
       organization: "건강보험심사평가원 × SK AX",
       description: "인증 데이터 EDA, AI 자동 심사 로직 설계, 검수 자동화 성능 개선",
       logos: [
-        { src: "https://www.hira.or.kr/images/contents/renew_bg_ci1.png", alt: "건강보험심사평가원", className: "logo-zoom-hira", fallback: "HIRA" },
-        { src: "https://www.skax.co.kr/logo.svg", alt: "SK AX", className: "logo-fit-contain logo-skax", fallback: "SK AX" }
+        { src: "https://www.hira.or.kr/images/contents/renew_bg_ci1.png", alt: "건강보험심사평가원", className: "logo-fit-contain logo-hira" }
       ]
     }
   ],
@@ -173,7 +178,7 @@ window.PORTFOLIO_DATA = {
       subtitle: "10km",
       description: "완주 기록 00:55:06.25",
       logos: [
-        { type: "mark", text: "10K", alt: "10km Marathon", className: "logo-mark-run" }
+        { src: "assets/logo-kma.svg", alt: "KMA", className: "logo-fit-contain logo-kma" }
       ]
     },
     {
@@ -182,7 +187,7 @@ window.PORTFOLIO_DATA = {
       subtitle: "한국데이터산업진흥원",
       description: "국가공인 자격",
       logos: [
-        { src: "https://www.kdata.or.kr/_img/web/pc/cont/symbol.png", alt: "한국데이터산업진흥원", className: "logo-crop-kdata", fallback: "K-DATA" }
+        { src: "https://www.kdata.or.kr/_img/web/pc/cont/symbol.png", alt: "한국데이터산업진흥원", className: "logo-crop-kdata" }
       ]
     }
   ],
