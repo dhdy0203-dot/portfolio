@@ -77,6 +77,20 @@ window.PORTFOLIO_DATA = {
       role: "",
       organization: "통계자료캡스톤디자인",
       description: "공간데이터 전처리, 입지 요인 분석, 다기준 의사결정 방법론 적용"
+    },
+    {
+      date: "2025.08.01 - 2025.08.25",
+      title: "DACON 식음업장 메뉴 수요 예측 AI 온라인 해커톤",
+      role: "",
+      organization: "DACON",
+      description: "XGBoost와 시계열 모델 등을 결합해 메뉴 수요를 예측하고 상위 14% 성적 달성"
+    },
+    {
+      date: "2025.02.01 - 2025.02.27 09:59",
+      title: "난임 환자 대상 임신 성공 여부 예측 AI 온라인 해커톤",
+      role: "",
+      organization: "",
+      description: "CatBoost·LightGBM 등 부스팅 모델을 활용해 임신 성공 여부를 예측하고 상위 10% 성적 달성"
     }
   ],
 
@@ -97,7 +111,7 @@ window.PORTFOLIO_DATA = {
     }
   ],
 
-  awardsScholarships: [
+  awards: [
     {
       date: "2026.09.18",
       title: "공공기관 AI 프로젝트 챌린지 Job아라! 우수상",
@@ -105,11 +119,20 @@ window.PORTFOLIO_DATA = {
       description: "공공기관 현장문제 해결 AI 프로젝트"
     },
     {
+      date: "2026.09.15",
+      title: "건강보험심사평가원 AI 프로젝트",
+      subtitle: "건강보험심사평가원 · GreenScan 팀",
+      description: "AI 프로젝트 우수 성과 상장"
+    },
+    {
       date: "2026.01.23",
       title: "D-EXPRESS CAMP 대상",
       subtitle: "서울대학교 빅데이터혁신융합대학사업단",
       description: "온톨로지 및 지식그래프 기반 교육서비스 기획·개발 해커톤"
-    },
+    }
+  ],
+
+  scholarships: [
     {
       date: "2025년 2학기",
       title: "Edge-Star 장학",

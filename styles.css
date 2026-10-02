@@ -256,3 +256,8 @@ footer p{margin:0}.credit{opacity:.72}
   .contact-photo-wrap{grid-row:auto;max-width:320px;margin:0 auto 8px}
   .roles{font-size:16px;line-height:1.7}
 }
+
+/* v12: experience organization first; role stays on the opposite side when present */
+.timeline-meta span:first-child{text-align:left}
+.timeline-meta span:last-child{text-align:right}
+.timeline-meta span:only-child{text-align:left}

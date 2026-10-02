@@ -36,8 +36,8 @@
   const experienceTimeline = (items) => items.map(item => {
     const meta = (item.role || item.organization) ? `
       <div class="timeline-meta">
-        <span>${item.role || ""}</span>
         <span>${item.organization || ""}</span>
+        <span>${item.role || ""}</span>
       </div>` : "";
     return `
       <article class="timeline-item">
@@ -73,7 +73,8 @@
     </article>`).join("");
 
   $("#side-projects-list").innerHTML = sideProjectTimeline(d.sideProjects || []);
-  $("#awards-list").innerHTML = educationTimeline(d.awardsScholarships || []);
+  $("#awards-list").innerHTML = educationTimeline(d.awards || []);
+  $("#scholarships-list").innerHTML = educationTimeline(d.scholarships || []);
   $("#certifications-list").innerHTML = educationTimeline(d.certifications || []);
 
   const categories = ["all", ...new Set(d.projects.map(p => p.category))];
