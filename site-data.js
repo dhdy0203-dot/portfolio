@@ -16,7 +16,7 @@ window.PORTFOLIO_DATA = {
       date: "2023 - 2027",
       title: "University of Seoul",
       subtitle: "Department of Statistics",
-      description: "Minor: School of Economics"
+      description: "Minor in Economics, School of Economics"
     },
     {
       date: "2026.01.19 - 2026.01.23",
@@ -65,22 +65,58 @@ window.PORTFOLIO_DATA = {
       date: "2026",
       title: "자산 변동성 예측 프로젝트",
       role: "",
-      organization: "",
+      organization: "금융시계열",
       description: "GARCH 계열 모형을 활용한 자산 변동성 분석 및 예측"
     },
     {
       date: "2026",
       title: "동적상관계수 분석 프로젝트",
       role: "",
-      organization: "",
+      organization: "금융시계열",
       description: "자산 간 동적 상관관계 분석, 데이터 전처리 및 결과 해석"
     },
     {
       date: "2025",
       title: "WSDM 공간데이터 분석 프로젝트",
       role: "",
-      organization: "",
+      organization: "통계자료캡스톤디자인",
       description: "공간데이터 전처리, 입지 요인 분석, 다기준 의사결정 방법론 적용"
+    }
+  ],
+
+  awardsScholarships: [
+    {
+      date: "2026.09.18",
+      title: "공공기관 AI 프로젝트 챌린지 Job아라! 우수상",
+      subtitle: "서울시립대학교 AI·SW융합교육원",
+      description: "공공기관 현장문제 해결 AI 프로젝트"
+    },
+    {
+      date: "2026.01.23",
+      title: "D-EXPRESS CAMP 대상",
+      subtitle: "서울대학교 빅데이터혁신융합대학사업단",
+      description: "온톨로지 및 지식그래프 기반 교육서비스 기획·개발 해커톤"
+    },
+    {
+      date: "2025년 2학기",
+      title: "Edge-Star 장학",
+      subtitle: "Scholarship",
+      description: "대학혁신지원사업 장학"
+    },
+    {
+      date: "2023년 2학기",
+      title: "학업우수장학 (II종)",
+      subtitle: "Scholarship",
+      description: "성적우수 장학"
+    }
+  ],
+
+  certifications: [
+    {
+      date: "2026.06.05",
+      title: "데이터분석 준전문가 (ADsP)",
+      subtitle: "한국데이터산업진흥원",
+      description: "국가공인 자격"
     }
   ],
 
