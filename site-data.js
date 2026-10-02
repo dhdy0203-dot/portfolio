@@ -1,6 +1,6 @@
 window.PORTFOLIO_DATA = {
-  name: "YOUR NAME",
-  roles: ["Backend Developer", "Data Engineer", "Problem Solver"],
+  name: "유도현",
+  roles: ["모든 일은 설득의 과정이며, 통계는 데이터를 통해 그 설득에 객관적 근거를 다는 일이라고 생각하는 사람입니다."],
   about: "여기에 자기소개를 넣으세요. 어떤 개발자인지, 어떤 문제를 좋아하는지, 어떤 기술과 경험을 갖고 있는지를 3~5문장 정도로 정리하면 좋습니다.",
   resumeUrl: "#",
 
