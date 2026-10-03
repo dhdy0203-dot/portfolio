@@ -192,13 +192,159 @@ window.PORTFOLIO_DATA = {
     }
   ],
 
+  projectCategories: [
+    { key: "external-collaboration", label: "External Collaboration" },
+    { key: "experience", label: "Experience" },
+    { key: "hackathon", label: "Hackathon" },
+    { key: "side-projects", label: "Side Projects" }
+  ],
+
   projects: [
-    { title: "Project One", category: "backend", image: "assets/project-1.svg", description: "프로젝트 한 줄 소개", url: "#" },
-    { title: "Project Two", category: "data", image: "assets/project-2.svg", description: "프로젝트 한 줄 소개", url: "#" },
-    { title: "Project Three", category: "web", image: "assets/project-3.svg", description: "프로젝트 한 줄 소개", url: "#" },
-    { title: "Project Four", category: "backend", image: "assets/project-4.svg", description: "프로젝트 한 줄 소개", url: "#" },
-    { title: "Project Five", category: "data", image: "assets/project-5.svg", description: "프로젝트 한 줄 소개", url: "#" },
-    { title: "Project Six", category: "web", image: "assets/project-6.svg", description: "프로젝트 한 줄 소개", url: "#" }
+    {
+      slug: "crisis-child-model-retraining",
+      title: "운영 피드백 기반 위기아동 모델 재학습을 통한 예측 개선 연구 참여",
+      category: "external-collaboration",
+      date: "2025",
+      organization: "사회보장정보원",
+      role: "학부연구원",
+      description: "EDA, 데이터 구축, 모델 성능 개선 참여",
+      overview: "사회보장정보원과의 협업 연구에서 운영 피드백을 반영해 위기아동 예측 모델을 재학습하고 예측 성능을 개선하는 과정에 참여했습니다.",
+      highlights: [
+        "데이터 특성 파악을 위한 EDA 참여",
+        "모델 학습 및 검증을 위한 데이터 구축 참여",
+        "재학습 과정에서 모델 성능 개선을 위한 분석 및 실험 참여"
+      ],
+      keywords: ["EDA", "데이터 구축", "모델 재학습", "성능 개선"]
+    },
+    {
+      slug: "esg-image-auto-review",
+      title: "ESG 인증 이미지 자동 심사",
+      category: "external-collaboration",
+      date: "2026",
+      organization: "건강보험심사평가원 × SK AX",
+      role: "",
+      description: "인증 데이터 EDA, AI 자동 심사 로직 설계, 검수 자동화 성능 개선",
+      overview: "건강보험심사평가원 × SK AX 협업 프로젝트에서 ESG 인증 이미지의 자동 심사 흐름을 설계하고 검수 자동화 성능을 개선하는 작업에 참여했습니다.",
+      highlights: [
+        "인증 데이터 EDA",
+        "AI 기반 자동 심사 로직 설계",
+        "검수 자동화 성능 개선"
+      ],
+      keywords: ["EDA", "AI", "이미지 심사", "검수 자동화"]
+    },
+    {
+      slug: "optim-lab-research",
+      title: "학부연구생 연구 활동",
+      category: "experience",
+      date: "2025 - 2026",
+      organization: "Optim Lab",
+      role: "학부연구생",
+      description: "LLM 데이터 수집, 모델 분석, Knowledge Graph 연구 참여",
+      overview: "Optim Lab 학부연구생으로 활동하며 LLM 관련 데이터 수집과 모델 분석, Knowledge Graph 연구에 참여했습니다.",
+      highlights: [
+        "LLM 관련 데이터 수집",
+        "모델 분석 업무 참여",
+        "Knowledge Graph 연구 참여"
+      ],
+      keywords: ["LLM", "Model Analysis", "Knowledge Graph", "Research"]
+    },
+    {
+      slug: "asset-volatility-forecasting",
+      title: "자산 변동성 예측 프로젝트",
+      category: "experience",
+      date: "2026",
+      organization: "금융시계열",
+      role: "",
+      description: "GARCH 계열 모형을 활용한 자산 변동성 분석 및 예측",
+      overview: "금융시계열 프로젝트로 GARCH 계열 모형을 활용해 자산의 변동성을 분석하고 예측했습니다.",
+      highlights: [
+        "자산 시계열 데이터 분석",
+        "GARCH 계열 모형을 활용한 변동성 분석",
+        "변동성 예측 결과 해석"
+      ],
+      keywords: ["Time Series", "GARCH", "Volatility", "Forecasting"]
+    },
+    {
+      slug: "dynamic-correlation-analysis",
+      title: "동적상관계수 분석 프로젝트",
+      category: "experience",
+      date: "2026",
+      organization: "금융시계열",
+      role: "",
+      description: "자산 간 동적 상관관계 분석, 데이터 전처리 및 결과 해석",
+      overview: "금융시계열 프로젝트로 자산 간 상관관계가 시간에 따라 어떻게 변화하는지 분석했습니다.",
+      highlights: [
+        "분석용 데이터 전처리",
+        "자산 간 동적 상관관계 분석",
+        "분석 결과 해석"
+      ],
+      keywords: ["Time Series", "Dynamic Correlation", "Data Preprocessing", "Analysis"]
+    },
+    {
+      slug: "wsdm-spatial-data-analysis",
+      title: "WSDM 공간데이터 분석 프로젝트",
+      category: "experience",
+      date: "2025",
+      organization: "통계자료캡스톤디자인",
+      role: "",
+      description: "공간데이터 전처리, 입지 요인 분석, 다기준 의사결정 방법론 적용",
+      overview: "통계자료캡스톤디자인 프로젝트에서 공간데이터를 전처리하고 입지 요인을 분석한 뒤 다기준 의사결정 방법론을 적용했습니다.",
+      highlights: [
+        "공간데이터 전처리",
+        "입지 요인 분석",
+        "다기준 의사결정 방법론 적용"
+      ],
+      keywords: ["Spatial Data", "Location Analysis", "MCDM", "Data Preprocessing"]
+    },
+    {
+      slug: "d-express-ontology-education-hackathon",
+      title: "온톨로지 및 지식그래프 기반 교육서비스 기획·개발 해커톤",
+      category: "hackathon",
+      date: "2026.01.23",
+      organization: "서울대학교 빅데이터혁신융합대학사업단",
+      role: "D-EXPRESS CAMP 대상",
+      description: "온톨로지 및 지식그래프 기반 교육서비스 기획·개발 해커톤",
+      overview: "온톨로지 및 지식그래프를 기반으로 한 교육서비스를 기획·개발한 D-EXPRESS CAMP 해커톤 프로젝트입니다.",
+      highlights: [
+        "온톨로지 및 지식그래프 기반 교육서비스 기획",
+        "교육서비스 개발 프로젝트 수행",
+        "D-EXPRESS CAMP 대상 수상"
+      ],
+      keywords: ["Ontology", "Knowledge Graph", "Education Service", "Hackathon"]
+    },
+    {
+      slug: "trade-qqick",
+      title: "trade.qqick.com",
+      category: "side-projects",
+      date: "2026",
+      organization: "Python, Streamlit, SQLite, AWS Lightsail",
+      role: "",
+      description: "자산 종목 모니터링 사이트",
+      overview: "관심 자산 종목을 확인하고 모니터링할 수 있도록 만든 개인 웹 프로젝트입니다.",
+      highlights: [
+        "Python과 Streamlit 기반 웹 애플리케이션 제작",
+        "SQLite를 활용한 데이터 관리",
+        "AWS Lightsail 환경에 서비스 배포"
+      ],
+      keywords: ["Python", "Streamlit", "SQLite", "AWS Lightsail"],
+      externalUrl: "https://trade.qqick.com"
+    },
+    {
+      slug: "youtube-live-translation-subtitles",
+      title: "Youtube 실시간 번역 자막",
+      category: "side-projects",
+      date: "2026",
+      organization: "Chrome Extension, Gemini API",
+      role: "",
+      description: "Gemini API와 연동하여 Chrome Extension 형태로 제작",
+      overview: "YouTube 시청 중 번역 자막을 활용할 수 있도록 Gemini API와 연동한 Chrome Extension 형태로 제작한 개인 프로젝트입니다.",
+      highlights: [
+        "Chrome Extension 형태로 기능 구현",
+        "Gemini API 연동",
+        "YouTube 시청 환경에서 번역 자막 기능 구성"
+      ],
+      keywords: ["Chrome Extension", "Gemini API", "YouTube", "Translation"]
+    }
   ],
 
   contact: {

@@ -89,22 +89,33 @@
   $("#scholarships-list").innerHTML = educationTimeline(d.scholarships || []);
   $("#certifications-list").innerHTML = educationTimeline(d.certifications || []);
 
-  const categories = ["all", ...new Set(d.projects.map(p => p.category))];
-  $("#filters").innerHTML = categories.map((c, i) =>
-    `<button class="filter ${i === 0 ? "active" : ""}" data-filter="${c}">${c}</button>`
+  const projectCategories = (d.projectCategories || []).length
+    ? d.projectCategories
+    : [...new Set(d.projects.map(p => p.category))].map(key => ({ key, label: key }));
+
+  $("#filters").innerHTML = projectCategories.map((category, i) =>
+    `<button class="filter ${i === 0 ? "active" : ""}" data-filter="${category.key}">${category.label}</button>`
   ).join("");
 
   const projectList = $("#project-list");
-  const drawProjects = (filter = "all") => {
-    const items = d.projects.filter(p => filter === "all" || p.category === filter);
+  const categoryLabel = (key) => projectCategories.find(category => category.key === key)?.label || key;
+
+  const drawProjects = (filter = projectCategories[0]?.key) => {
+    const items = d.projects.filter(p => p.category === filter);
     projectList.innerHTML = items.map(p => `
       <article class="project">
-        <img src="${p.image}" alt="${p.title}">
-        <div class="project-body">
-          <h3>${p.title}</h3>
-          <p>${p.description} · ${p.category}</p>
-          <a href="${p.url}" target="_blank" rel="noreferrer">View Project →</a>
-        </div>
+        <a class="project-card-link" href="project-detail.html?project=${encodeURIComponent(p.slug)}" aria-label="${p.title} 상세 보기">
+          <div class="project-topline">
+            <span class="project-category">${categoryLabel(p.category)}</span>
+            <span class="project-date">${p.date || ""}</span>
+          </div>
+          <div class="project-body">
+            <h3>${p.title}</h3>
+            ${p.organization ? `<p class="project-organization">${p.organization}</p>` : ""}
+            <p class="project-description">${p.description}</p>
+            <span class="project-more">View Project <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
       </article>`).join("");
   };
   drawProjects();
