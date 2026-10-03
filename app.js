@@ -91,7 +91,10 @@
 
   const projectCategories = (d.projectCategories || []).length
     ? d.projectCategories
-    : [...new Set(d.projects.map(p => p.category))].map(key => ({ key, label: key }));
+    : [
+        { key: "all", label: "ALL" },
+        ...[...new Set(d.projects.map(p => p.category))].map(key => ({ key, label: key }))
+      ];
 
   $("#filters").innerHTML = projectCategories.map((category, i) =>
     `<button class="filter ${i === 0 ? "active" : ""}" data-filter="${category.key}">${category.label}</button>`
@@ -99,21 +102,25 @@
 
   const projectList = $("#project-list");
   const categoryLabel = (key) => projectCategories.find(category => category.key === key)?.label || key;
+  const projectImages = [
+    "assets/project-1.svg",
+    "assets/project-2.svg",
+    "assets/project-3.svg",
+    "assets/project-4.svg",
+    "assets/project-5.svg",
+    "assets/project-6.svg"
+  ];
 
-  const drawProjects = (filter = projectCategories[0]?.key) => {
-    const items = d.projects.filter(p => p.category === filter);
-    projectList.innerHTML = items.map(p => `
+  const drawProjects = (filter = "all") => {
+    const items = d.projects.filter(p => filter === "all" || p.category === filter);
+    projectList.innerHTML = items.map((p, i) => `
       <article class="project">
         <a class="project-card-link" href="project-detail.html?project=${encodeURIComponent(p.slug)}" aria-label="${p.title} 상세 보기">
-          <div class="project-topline">
-            <span class="project-category">${categoryLabel(p.category)}</span>
-            <span class="project-date">${p.date || ""}</span>
-          </div>
+          <img src="${p.image || projectImages[i % projectImages.length]}" alt="">
           <div class="project-body">
             <h3>${p.title}</h3>
-            ${p.organization ? `<p class="project-organization">${p.organization}</p>` : ""}
-            <p class="project-description">${p.description}</p>
-            <span class="project-more">View Project <span aria-hidden="true">→</span></span>
+            <p>${p.description} · ${categoryLabel(p.category)}</p>
+            <span class="project-more">View Project →</span>
           </div>
         </a>
       </article>`).join("");
