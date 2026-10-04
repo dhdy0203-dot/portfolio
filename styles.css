@@ -583,6 +583,8 @@ footer p{margin:0}.credit{opacity:.72}
 }
 .detail-section h2{margin:0 0 18px;color:var(--ink);font-size:25px}
 .detail-section > p:not(.detail-section-label){margin:0;max-width:780px;line-height:1.9;word-break:keep-all}
+.detail-prose{display:grid;gap:18px;max-width:800px}
+.detail-prose p{margin:0;color:#555;line-height:1.95;word-break:keep-all}
 .detail-highlight-list{display:grid;gap:12px;margin:0;padding:0;list-style:none}
 .detail-highlight-list li{
   position:relative;

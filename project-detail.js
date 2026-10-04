@@ -27,6 +27,11 @@
   $("#detail-role").hidden = !project.role;
   $("#detail-description").textContent = project.description || "";
   $("#detail-overview").textContent = project.overview || project.description || "";
+  const detailParagraphs = Array.isArray(project.detail)
+    ? project.detail
+    : (project.detail ? [project.detail] : []);
+  $("#detail-detail").innerHTML = detailParagraphs
+    .map(item => `<p>${item}</p>`).join("");
   $("#detail-highlights").innerHTML = (project.highlights || [])
     .map(item => `<li>${item}</li>`).join("");
   $("#detail-keywords").innerHTML = (project.keywords || [])
