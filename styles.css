@@ -625,3 +625,27 @@ footer p{margin:0}.credit{opacity:.72}
   .detail-lead{font-size:16px}
   .detail-empty{padding:38px 24px}
 }
+
+/* v16: make timeline/collaboration entries that exist in Portfolio clickable */
+.section-project-link{
+  display:block;
+  color:inherit;
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+}
+.timeline-item.section-project-link:hover,
+.timeline-item.section-project-link:focus-visible,
+.featured-collab-card.section-project-link:hover,
+.featured-collab-card.section-project-link:focus-visible{
+  background:#fffafa;
+  box-shadow:0 10px 24px rgba(0,0,0,.055);
+  transform:translateY(-2px);
+  outline:none;
+}
+.timeline-item.section-project-link:hover h3,
+.timeline-item.section-project-link:focus-visible h3,
+.featured-collab-card.section-project-link:hover h3,
+.featured-collab-card.section-project-link:focus-visible h3{
+  color:var(--coral);
+}

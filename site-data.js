@@ -24,6 +24,7 @@ window.PORTFOLIO_DATA = {
     {
       date: "2026.01.19 - 2026.01.23",
       title: "동계 D-Express 캠프",
+      projectSlug: "d-express-ontology-education-hackathon",
       subtitle: "서울대학교 빅데이터 혁신융합대학사업단",
       description: "(공유) 온톨로지 및 지식그래프 과정 이수",
       logos: [
@@ -45,6 +46,7 @@ window.PORTFOLIO_DATA = {
     {
       date: "2025",
       title: "운영 피드백 기반 위기아동 모델 재학습을 통한 예측 개선 연구 참여",
+      projectSlug: "crisis-child-model-retraining",
       role: "학부연구원",
       organization: "사회보장정보원",
       description: "EDA, 데이터 구축, 모델 성능 개선 참여",
@@ -55,6 +57,7 @@ window.PORTFOLIO_DATA = {
     {
       date: "2026",
       title: "ESG 인증 이미지 자동 심사",
+      projectSlug: "esg-image-auto-review",
       role: "",
       organization: "건강보험심사평가원 × SK AX",
       description: "인증 데이터 EDA, AI 자동 심사 로직 설계, 검수 자동화 성능 개선",
@@ -68,6 +71,7 @@ window.PORTFOLIO_DATA = {
     {
       date: "2025 - 2026",
       title: "학부연구생 연구 활동",
+      projectSlug: "optim-lab-research",
       role: "학부연구생",
       organization: "Optim Lab",
       description: "LLM 데이터 수집, 모델 분석, Knowledge Graph 연구 참여"
@@ -75,6 +79,7 @@ window.PORTFOLIO_DATA = {
     {
       date: "2026",
       title: "자산 변동성 예측 프로젝트",
+      projectSlug: "asset-volatility-forecasting",
       role: "",
       organization: "금융시계열",
       description: "GARCH 계열 모형을 활용한 자산 변동성 분석 및 예측"
@@ -82,6 +87,7 @@ window.PORTFOLIO_DATA = {
     {
       date: "2026",
       title: "동적상관계수 분석 프로젝트",
+      projectSlug: "dynamic-correlation-analysis",
       role: "",
       organization: "금융시계열",
       description: "자산 간 동적 상관관계 분석, 데이터 전처리 및 결과 해석"
@@ -89,6 +95,7 @@ window.PORTFOLIO_DATA = {
     {
       date: "2025",
       title: "WSDM 공간데이터 분석 프로젝트",
+      projectSlug: "wsdm-spatial-data-analysis",
       role: "",
       organization: "통계자료캡스톤디자인",
       description: "공간데이터 전처리, 입지 요인 분석, 다기준 의사결정 방법론 적용"
@@ -113,6 +120,7 @@ window.PORTFOLIO_DATA = {
     {
       date: "2026",
       title: "trade.qqick.com",
+      projectSlug: "trade-qqick",
       organization: "Python, Streamlit, SQLite, AWS Lightsail",
       description: "자산 종목 모니터링 사이트",
       url: "https://trade.qqick.com"
@@ -120,6 +128,7 @@ window.PORTFOLIO_DATA = {
     {
       date: "2026",
       title: "Youtube 실시간 번역 자막",
+      projectSlug: "youtube-live-translation-subtitles",
       organization: "Chrome Extension, Gemini API",
       description: "Gemini API와 연동하여 Chrome Extension 형태로 제작",
       url: ""
@@ -130,18 +139,21 @@ window.PORTFOLIO_DATA = {
     {
       date: "2026.09.18",
       title: "공공기관 AI 프로젝트 챌린지 Job아라! 우수상",
+      projectSlug: "esg-image-auto-review",
       subtitle: "서울시립대학교 AI·SW융합교육원",
       description: "공공기관 현장문제 해결 AI 프로젝트"
     },
     {
       date: "2026.09.15",
       title: "건강보험심사평가원 AI 프로젝트",
+      projectSlug: "esg-image-auto-review",
       subtitle: "건강보험심사평가원 · GreenScan 팀",
       description: "AI 프로젝트 우수 성과 상장"
     },
     {
       date: "2026.01.23",
       title: "D-EXPRESS CAMP 대상",
+      projectSlug: "d-express-ontology-education-hackathon",
       subtitle: "서울대학교 빅데이터혁신융합대학사업단",
       description: "온톨로지 및 지식그래프 기반 교육서비스 기획·개발 해커톤"
     }
@@ -193,6 +205,7 @@ window.PORTFOLIO_DATA = {
   ],
 
   projectCategories: [
+    { key: "all", label: "ALL" },
     { key: "external-collaboration", label: "External Collaboration" },
     { key: "experience", label: "Experience" },
     { key: "hackathon", label: "Hackathon" },

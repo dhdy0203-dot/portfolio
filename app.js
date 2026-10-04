@@ -3,6 +3,19 @@
   const $ = (s) => document.querySelector(s);
   const $$ = (s) => [...document.querySelectorAll(s)];
 
+  const projectHref = (item = {}) => {
+    const slug = item.projectSlug || d.projects.find(project => project.title === item.title)?.slug;
+    return slug ? `project-detail.html?project=${encodeURIComponent(slug)}` : "";
+  };
+
+  const linkedRoot = (item, className, content, tag = "article") => {
+    const href = projectHref(item);
+    if (href) {
+      return `<a class="${className} section-project-link" href="${href}" aria-label="${item.title} 프로젝트 상세 보기">${content}</a>`;
+    }
+    return `<${tag} class="${className}">${content}</${tag}>`;
+  };
+
   const logoGroup = (logos = []) => {
     if (!logos.length) return "";
     return `<div class="item-logo-group" aria-hidden="true">${logos.map(logo => {
@@ -35,14 +48,16 @@
       <div class="track"><div class="fill" data-level="${s.level}"></div></div>
     </div>`).join("");
 
-  const educationTimeline = (items) => items.map(item => `
-    <article class="timeline-item ${item.logos?.length ? "has-logo" : ""}">
+  const educationTimeline = (items) => items.map(item => {
+    const classes = `timeline-item ${item.logos?.length ? "has-logo" : ""}`.trim();
+    const content = `
       ${item.date ? `<span class="timeline-date">${item.date}</span>` : ""}
       <h3>${item.title}</h3>
       ${item.subtitle ? `<h4>${item.subtitle}</h4>` : ""}
       ${item.description ? `<p>${item.description}</p>` : ""}
-      ${logoGroup(item.logos)}
-    </article>`).join("");
+      ${logoGroup(item.logos)}`;
+    return linkedRoot(item, classes, content);
+  }).join("");
 
   const experienceTimeline = (items) => items.map(item => {
     const meta = (item.role || item.organization) ? `
@@ -50,19 +65,19 @@
         <span>${item.organization || ""}</span>
         <span>${item.role || ""}</span>
       </div>` : "";
-    return `
-      <article class="timeline-item">
-        <span class="timeline-date">${item.date}</span>
-        <h3>${item.title}</h3>
-        ${meta}
-        <p>${item.description}</p>
-      </article>`;
+    const content = `
+      <span class="timeline-date">${item.date}</span>
+      <h3>${item.title}</h3>
+      ${meta}
+      <p>${item.description}</p>`;
+    return linkedRoot(item, "timeline-item", content);
   }).join("");
 
   $("#education-list").innerHTML = educationTimeline(d.education);
 
-  const collaborationTimeline = (items) => items.map(item => `
-    <article class="featured-collab-card ${item.logos?.length ? "has-logo" : ""}">
+  const collaborationTimeline = (items) => items.map(item => {
+    const classes = `featured-collab-card ${item.logos?.length ? "has-logo" : ""}`.trim();
+    const content = `
       <div class="featured-collab-top">
         <span class="featured-date">${item.date}</span>
         <span class="featured-org">${item.organization || ""}</span>
@@ -70,28 +85,38 @@
       <h3>${item.title}</h3>
       ${item.role ? `<p class="featured-role">${item.role}</p>` : ""}
       <p>${item.description}</p>
-      ${logoGroup(item.logos)}
-    </article>`).join("");
+      ${logoGroup(item.logos)}`;
+    return linkedRoot(item, classes, content);
+  }).join("");
 
   $("#collaboration-list").innerHTML = collaborationTimeline(d.externalCollaboration || []);
   $("#experience-list").innerHTML = experienceTimeline(d.experience);
 
-  const sideProjectTimeline = (items) => items.map(item => `
-    <article class="timeline-item">
+  const sideProjectTimeline = (items) => items.map(item => {
+    const href = projectHref(item);
+    const title = !href && item.url
+      ? `<a class="timeline-title-link" href="${item.url}" target="_blank" rel="noreferrer">${item.title}</a>`
+      : item.title;
+    const content = `
       <span class="timeline-date">${item.date}</span>
-      <h3>${item.url ? `<a class="timeline-title-link" href="${item.url}" target="_blank" rel="noreferrer">${item.title}</a>` : item.title}</h3>
+      <h3>${title}</h3>
       ${item.organization ? `<div class="timeline-meta"><span></span><span>${item.organization}</span></div>` : ""}
-      <p>${item.description}</p>
-    </article>`).join("");
+      <p>${item.description}</p>`;
+    return linkedRoot(item, "timeline-item", content);
+  }).join("");
 
   $("#side-projects-list").innerHTML = sideProjectTimeline(d.sideProjects || []);
   $("#awards-list").innerHTML = educationTimeline(d.awards || []);
   $("#scholarships-list").innerHTML = educationTimeline(d.scholarships || []);
   $("#certifications-list").innerHTML = educationTimeline(d.certifications || []);
 
-  const projectCategories = (d.projectCategories || []).length
+  let projectCategories = (d.projectCategories || []).length
     ? d.projectCategories
     : [...new Set(d.projects.map(p => p.category))].map(key => ({ key, label: key }));
+
+  if (!projectCategories.some(category => category.key === "all")) {
+    projectCategories = [{ key: "all", label: "ALL" }, ...projectCategories];
+  }
 
   $("#filters").innerHTML = projectCategories.map((category, i) =>
     `<button class="filter ${i === 0 ? "active" : ""}" data-filter="${category.key}">${category.label}</button>`
@@ -100,8 +125,8 @@
   const projectList = $("#project-list");
   const categoryLabel = (key) => projectCategories.find(category => category.key === key)?.label || key;
 
-  const drawProjects = (filter = projectCategories[0]?.key) => {
-    const items = d.projects.filter(p => p.category === filter);
+  const drawProjects = (filter = "all") => {
+    const items = filter === "all" ? d.projects : d.projects.filter(p => p.category === filter);
     projectList.innerHTML = items.map(p => `
       <article class="project">
         <a class="project-card-link" href="project-detail.html?project=${encodeURIComponent(p.slug)}" aria-label="${p.title} 상세 보기">
