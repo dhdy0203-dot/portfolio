@@ -193,7 +193,6 @@ window.PORTFOLIO_DATA = {
   ],
 
   projectCategories: [
-    { key: "all", label: "ALL" },
     { key: "external-collaboration", label: "External Collaboration" },
     { key: "experience", label: "Experience" },
     { key: "hackathon", label: "Hackathon" },
