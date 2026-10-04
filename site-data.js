@@ -415,6 +415,12 @@ window.PORTFOLIO_DATA = {
         "변동성 추정창은 2~3년, 극단 분위수 표본은 10년으로 분리해 추정 안정성 개선",
         "Python·Streamlit·SQLite로 구현하고 AWS Lightsail에 배포해 개인 서비스로 운영"
       ],
+      media: [
+        { src: "assets/projects/trade-qqick/01-valuation-screener-overview.png", alt: "trade.qqick.com 밸류에이션 스크리너 메인 화면", caption: "섹터별 저평가·사이클·골든크로스 현황과 전체 종목 요약을 확인하는 밸류에이션 스크리너 메인 화면" },
+        { src: "assets/projects/trade-qqick/02-recommended-stocks-table.png", alt: "trade.qqick.com 추천종목 테이블", caption: "PER·PBR·EPS·ROE와 역사적 위치, 일간 신호를 함께 비교하는 추천종목 테이블" },
+        { src: "assets/projects/trade-qqick/03-stock-detail-chart.png", alt: "trade.qqick.com KCC 종목 상세 차트", caption: "이동평균 신호와 밸류에이션 밴드, 핵심 재무지표를 한 화면에서 확인하는 종목 상세 페이지" },
+        { src: "assets/projects/trade-qqick/04-signal-technical-indicators.png", alt: "trade.qqick.com 일간 신호와 기술적 지표 화면", caption: "이동평균·기술적 지표를 종합해 매수·중립·매도 신호와 RSI 흐름을 보여주는 분석 화면" }
+      ],
       keywords: ["Python", "Streamlit", "SQLite", "GARCH", "Valuation", "AWS Lightsail"],
       externalUrl: "https://trade.qqick.com"
     },
@@ -435,6 +441,12 @@ window.PORTFOLIO_DATA = {
         "Chrome Extension 구조로 YouTube 시청 화면에 번역 기능 통합",
         "Gemini API를 연동해 자막 텍스트의 번역 처리 구성",
         "기존 시청 흐름을 방해하지 않도록 브라우저 내부에서 사용할 수 있는 UI 형태로 구현"
+      ],
+      media: [
+        { src: "assets/projects/youtube-live-translation-subtitles/01-live-translation-status.png", alt: "YouTube 강의 영상에서 실시간 번역이 진행되는 화면", caption: "YouTube 재생 화면을 유지한 채 현재 자막 구간을 감지하고 실시간 번역을 처리하는 모습" },
+        { src: "assets/projects/youtube-live-translation-subtitles/02-korean-subtitle-overlay.png", alt: "YouTube 강의 영상에 한국어 번역 자막이 표시된 화면", caption: "Gemini API 번역 결과를 영상 위 한국어 자막으로 오버레이해 바로 확인할 수 있도록 구현" },
+        { src: "assets/projects/youtube-live-translation-subtitles/03-lecture-translation-example.png", alt: "MIT 강의 영상의 필요충분조건 설명을 한국어로 번역한 화면", caption: "수학·논리 강의처럼 문맥이 중요한 문장을 시청 흐름 안에서 한국어로 번역한 실제 사용 예시" },
+        { src: "assets/projects/youtube-live-translation-subtitles/04-translation-playback-example.png", alt: "YouTube 강의 재생 중 한국어 실시간 번역 자막 예시", caption: "영상 재생과 탐색을 그대로 사용하면서 번역 자막이 함께 따라오는 Chrome Extension 실행 화면" }
       ],
       keywords: ["Chrome Extension", "Gemini API", "YouTube", "Translation"]
     }
