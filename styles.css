@@ -651,3 +651,43 @@ footer p{margin:0}.credit{opacity:.72}
 .featured-collab-card.section-project-link:focus-visible h3{
   color:var(--coral);
 }
+
+/* v17: project detail image galleries */
+.detail-media-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+.detail-media-item{
+  margin:0;
+  min-width:0;
+  overflow:hidden;
+  border:1px solid #e7e7e7;
+  background:#fafafa;
+}
+.detail-media-item a{
+  display:block;
+  background:#f3f3f3;
+  line-height:0;
+}
+.detail-media-item img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:560px;
+  object-fit:contain;
+  background:#fff;
+  transition:transform .2s ease;
+}
+.detail-media-item a:hover img{transform:scale(1.01)}
+.detail-media-item figcaption{
+  padding:12px 14px 14px;
+  color:#666;
+  font-size:12px;
+  line-height:1.65;
+  word-break:keep-all;
+}
+@media(max-width:720px){
+  .detail-media-grid{grid-template-columns:1fr;gap:14px}
+  .detail-media-item img{max-height:none}
+}

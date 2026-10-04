@@ -32,6 +32,19 @@
     : (project.detail ? [project.detail] : []);
   $("#detail-detail").innerHTML = detailParagraphs
     .map(item => `<p>${item}</p>`).join("");
+  const media = Array.isArray(project.media) ? project.media : [];
+  const mediaSection = $("#detail-media-section");
+  if (media.length) {
+    mediaSection.hidden = false;
+    $("#detail-media").innerHTML = media.map(item => `
+      <figure class="detail-media-item">
+        <a href="${item.src}" target="_blank" rel="noreferrer" aria-label="${item.alt || item.caption || '프로젝트 이미지'} 크게 보기">
+          <img src="${item.src}" alt="${item.alt || ''}" loading="lazy" />
+        </a>
+        ${item.caption ? `<figcaption>${item.caption}</figcaption>` : ''}
+      </figure>`).join("");
+  }
+
   $("#detail-highlights").innerHTML = (project.highlights || [])
     .map(item => `<li>${item}</li>`).join("");
   $("#detail-keywords").innerHTML = (project.keywords || [])

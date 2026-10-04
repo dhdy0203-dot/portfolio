@@ -256,6 +256,12 @@ window.PORTFOLIO_DATA = {
         "머그컵·텀블러 100%, 잔반제로 98%, 전원끄기 99.8% 정확도를 기록하고 전체 수동 검수 건수를 85.6% 감소",
         "기존 관리자 시스템을 수정하지 않고 사용할 수 있도록 Chrome Extension 형태의 모니터링 UI로 구현"
       ],
+      media: [
+        { src: "assets/projects/esg-image-auto-review/01-manual-workload.png", alt: "헹가래 사진 인증의 기존 수동 검수 업무량", caption: "기존 관리자 업무: 하루 100~200장, 월 평균 30시간의 사진 인증 검수" },
+        { src: "assets/projects/esg-image-auto-review/02-three-way-pipeline.png", alt: "헹가래 AI 자동승인 자동반려 검토필요 3분류 파이프라인", caption: "명확한 사례는 자동 처리하고 애매한 사례만 사람에게 전달하는 3분류 파이프라인" },
+        { src: "assets/projects/esg-image-auto-review/03-mug-pipeline.png", alt: "머그컵 텀블러 인증 이미지 판정 파이프라인", caption: "QR 검출부터 컵 종류 확인까지 이어지는 머그컵·텀블러 판정 파이프라인" },
+        { src: "assets/projects/esg-image-auto-review/04-extension-screen.png", alt: "헹가래 관리자 화면에 적용된 AI 판정 확장프로그램", caption: "기존 관리자 시스템 위에 AI 승인·반려·검토필요 판정을 표시한 Chrome Extension 적용 화면" }
+      ],
       keywords: ["Qwen3-VL", "VLM", "YOLO-World", "OpenCV", "Chrome Extension", "Workflow Automation"]
     },
     {
@@ -300,6 +306,12 @@ window.PORTFOLIO_DATA = {
         "2010~2012년 구간을 중심으로 시장 충격의 지속성과 비대칭 반응 해석",
         "추가 분석으로 Markov-GARCH(국면전환) 모형을 적용해 시장 국면 변화 특성 탐색"
       ],
+      media: [
+        { src: "assets/projects/asset-volatility-forecasting/01-kospi-price-return.png", alt: "KOSPI 가격과 로그수익률 시계열", caption: "KOSPI 가격 및 로그수익률 시계열을 통한 변동성 군집 확인" },
+        { src: "assets/projects/asset-volatility-forecasting/02-model-performance.png", alt: "자산별 GARCH EGARCH GJR-GARCH 모형 성능 비교", caption: "KOSPI·Nikkei·NASDAQ·Gold의 GARCH 계열 모형 성능 비교" },
+        { src: "assets/projects/asset-volatility-forecasting/03-regime-comparison.png", alt: "Single Regime과 Markov Switching GARCH 비교", caption: "Single Regime과 Markov Switching GARCH의 적합 결과 비교" },
+        { src: "assets/projects/asset-volatility-forecasting/04-market-dynamics.png", alt: "시장 동학과 분산투자 분석 결과", caption: "시장 동학과 자산 간 분산투자 관점의 결과 정리" }
+      ],
       keywords: ["GARCH", "EGARCH", "GJR-GARCH", "Volatility", "Financial Time Series", "Markov-GARCH"]
     },
     {
@@ -321,6 +333,12 @@ window.PORTFOLIO_DATA = {
         "EGARCH 기반 변동성 분석과 VaR 리스크 지표 확인",
         "DCC-GARCH를 활용한 자산 간 동적 상관관계 분석",
         "모형 결과를 자산별로 비교하고 리스크 관점에서 결과 해석"
+      ],
+      media: [
+        { src: "assets/projects/dynamic-correlation-analysis/01-egarch-var-framework.png", alt: "EGARCH 기반 VaR 분석 프레임워크", caption: "EGARCH(1,1) 변동성 추정과 EVT·FHS·Skewed-t VaR 비교 프레임워크" },
+        { src: "assets/projects/dynamic-correlation-analysis/02-btc-var-violation.png", alt: "BTC 99퍼센트 VaR 위반 구간 비교", caption: "BTC의 99% VaR violation을 방법별로 비교한 결과" },
+        { src: "assets/projects/dynamic-correlation-analysis/03-var-es-comparison.png", alt: "BTC S&P500 Gold의 VaR와 ES 비교", caption: "BTC·S&P 500·Gold의 99% VaR 및 ES 비교" },
+        { src: "assets/projects/dynamic-correlation-analysis/04-dcc-correlation.png", alt: "DCC-GARCH 동적 조건부 상관계수 결과", caption: "DCC-GARCH로 추정한 BTC·S&P 500·Gold 사이의 동적 조건부 상관계수" }
       ],
       keywords: ["EGARCH", "VaR", "DCC-GARCH", "Dynamic Correlation", "BTC", "Risk Analysis"]
     },
@@ -344,6 +362,10 @@ window.PORTFOLIO_DATA = {
         "공간데이터 전처리 및 분석용 CSV 데이터 구축",
         "입지 요인을 통합해 후보 지역의 상대적 적합도를 비교하는 분석 수행"
       ],
+      media: [
+        { src: "assets/projects/wsdm-spatial-data-analysis/medical-accessibility-analysis.png", alt: "의료접근성 중심 MCDM 가중합과 무작위 가중치 시뮬레이션 결과", caption: "의료접근성 중심 MCDM 가중합과 무작위 가중치 시뮬레이션 결과" },
+        { src: "assets/projects/wsdm-spatial-data-analysis/land-basic-analysis.png", alt: "토지 기본형 MCDM 가중합과 win ratio 시뮬레이션 결과", caption: "토지 기본형 MCDM 가중합 및 win_ratio 기반 무작위 가중치 시뮬레이션 결과" }
+      ],
       keywords: ["Spatial Data", "WSDM", "MCDM", "Location Analysis", "Data Preprocessing"]
     },
     {
@@ -366,7 +388,12 @@ window.PORTFOLIO_DATA = {
         "강의 콘텐츠 유사도 계산에 Jaccard Similarity를 적용해 연관 콘텐츠 탐색 기능 설계",
         "팀 내 Knowledge Graph 기술 리딩을 맡아 프로젝트를 완성하고 D-EXPRESS CAMP 대상 수상"
       ],
-      keywords: ["Ontology", "Knowledge Graph", "Triplet", "Jaccard Similarity", "Education Service", "Hackathon"]
+      media: [
+        { src: "assets/projects/d-express-ontology-education-hackathon/knowledge-graph-visualization.png", alt: "아삭이 전체 지식그래프 네트워크 시각화", caption: "교육·작물·주제·농업기술 등 온톨로지 구조를 연결한 전체 지식그래프 시각화" },
+        { src: "assets/projects/d-express-ontology-education-hackathon/service-run-screen.png", alt: "아삭이 Streamlit 서비스 실행 화면", caption: "사용자 프로필과 자연어 질문을 입력해 교육 콘텐츠를 탐색하는 Streamlit 서비스 실행 화면" }
+      ],
+      keywords: ["Ontology", "Knowledge Graph", "Triplet", "Jaccard Similarity", "Education Service", "Hackathon"],
+      externalUrl: "https://github.com/dhdy0203-dot/asak-agriculture-education"
     },
     {
       slug: "trade-qqick",
