@@ -1,0 +1,11 @@
+REFERENCE NOTICE
+
+Design reference:
+https://congchu.github.io/portfolio-collection/resume-2-master/
+
+Original template attribution shown by the reference project:
+HTML Codex — https://htmlcodex.com/
+
+This starter package was freshly authored as a convenient GitHub Pages baseline.
+If you later copy files or assets directly from the original template, retain the
+applicable license and attribution notices from that source.
