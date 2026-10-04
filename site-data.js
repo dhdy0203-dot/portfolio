@@ -56,7 +56,7 @@ window.PORTFOLIO_DATA = {
     },
     {
       date: "2026",
-      title: "ESG 인증 이미지 자동 심사",
+      title: "헹가래 어플 자동 모니터링 서비스",
       projectSlug: "esg-image-auto-review",
       role: "",
       organization: "건강보험심사평가원 × SK AX",
@@ -70,7 +70,7 @@ window.PORTFOLIO_DATA = {
   experience: [
     {
       date: "2025 - 2026",
-      title: "학부연구생 연구 활동",
+      title: "학부연구생 활동",
       projectSlug: "optim-lab-research",
       role: "학부연구생",
       organization: "Optim Lab",
@@ -78,19 +78,19 @@ window.PORTFOLIO_DATA = {
     },
     {
       date: "2026",
-      title: "자산 변동성 예측 프로젝트",
+      title: "자산군별 변동성 구조 비교: GARCH, EGARCH, GJR-GARCH 모형의 분석",
       projectSlug: "asset-volatility-forecasting",
       role: "",
       organization: "금융시계열",
-      description: "GARCH 계열 모형을 활용한 자산 변동성 분석 및 예측"
+      description: "코스피, 닛케이, 나스닥, 금의 GARCH 계열 모형 적합"
     },
     {
       date: "2026",
-      title: "동적상관계수 분석 프로젝트",
+      title: "EGARCH 기반 VaR 및 DCC-GARCH 리스크 분석",
       projectSlug: "dynamic-correlation-analysis",
       role: "",
       organization: "금융시계열",
-      description: "자산 간 동적 상관관계 분석, 데이터 전처리 및 결과 해석"
+      description: "BTC, S&P 500, Gold 자산을 중심으로"
     },
     {
       date: "2025",
@@ -220,78 +220,83 @@ window.PORTFOLIO_DATA = {
       date: "2025",
       organization: "사회보장정보원",
       role: "학부연구원",
-      description: "EDA, 데이터 구축, 모델 성능 개선 참여",
-      overview: "사회보장정보원과의 협업 연구에서 운영 피드백을 반영해 위기아동 예측 모델을 재학습하고 예측 성능을 개선하는 과정에 참여했습니다.",
+      description: "운영 데이터 EDA, 재학습 데이터 구축 및 모델 개선 참여",
+      overview: "정책 현장에서 축적된 운영 피드백을 반영해 위기아동 예측 모델을 재학습하고 성능을 개선하는 연구에 참여했습니다. 단순 모델링에 그치지 않고 학대 발생과 서비스 개입의 선후 관계, 개입 지연 요인, 과거·현재 데이터의 분포 변화까지 함께 살펴보며 재학습 전략을 검토했습니다.",
       highlights: [
-        "데이터 특성 파악을 위한 EDA 참여",
-        "모델 학습 및 검증을 위한 데이터 구축 참여",
-        "재학습 과정에서 모델 성능 개선을 위한 분석 및 실험 참여"
+        "운영 데이터 전처리 및 EDA, 모델 학습용 데이터 구축",
+        "PSI(Population Stability Index)를 활용한 데이터 분포 변화 확인 및 재학습 시점 전략 제안",
+        "Imbalanced Data와 Covariate Shift 관점에서 모델 성능 저하 원인 분석",
+        "학대 발생·서비스 개입의 시점과 정책 맥락을 함께 고려한 결과 해석"
       ],
-      keywords: ["EDA", "데이터 구축", "모델 재학습", "성능 개선"]
+      keywords: ["EDA", "PSI", "Covariate Shift", "Imbalanced Data", "Model Retraining"]
     },
     {
       slug: "esg-image-auto-review",
-      title: "ESG 인증 이미지 자동 심사",
+      title: "헹가래 어플 자동 모니터링 서비스",
       category: "external-collaboration",
       date: "2026",
       organization: "건강보험심사평가원 × SK AX",
       role: "",
-      description: "인증 데이터 EDA, AI 자동 심사 로직 설계, 검수 자동화 성능 개선",
-      overview: "건강보험심사평가원 × SK AX 협업 프로젝트에서 ESG 인증 이미지의 자동 심사 흐름을 설계하고 검수 자동화 성능을 개선하는 작업에 참여했습니다.",
+      description: "ESG 실천 인증 이미지의 AI 심사·모니터링 자동화",
+      overview: "건강보험심사평가원과 SK AX의 사내 ESG 실천 인증 서비스에서 사진 검수 업무를 자동화하는 프로젝트를 수행했습니다. 19개월간 누적된 15,834건의 인증 데이터를 분석해 머그컵·텀블러, 잔반제로, 전원끄기 항목별 판단 기준을 정리하고, 명확한 사례는 자동승인·자동반려하고 애매한 사례만 관리자에게 전달하는 3분류 심사 구조를 설계했습니다.",
       highlights: [
-        "인증 데이터 EDA",
-        "AI 기반 자동 심사 로직 설계",
-        "검수 자동화 성능 개선"
+        "19개월·15,834건의 인증 데이터와 반려 사유를 분석해 항목별 오류 패턴 및 실제 판단 기준 정리",
+        "OpenCV·YOLO-World·Qwen3-VL-8B를 조합해 단순 판별은 가볍게 처리하고 애매한 이미지에만 VLM을 적용",
+        "머그컵·텀블러 100%, 잔반제로 98%, 전원끄기 99.8% 정확도를 기록하고 전체 수동 검수 건수를 85.6% 감소",
+        "기존 관리자 시스템을 수정하지 않고 사용할 수 있도록 Chrome Extension 형태의 모니터링 UI로 구현"
       ],
-      keywords: ["EDA", "AI", "이미지 심사", "검수 자동화"]
+      keywords: ["Qwen3-VL", "VLM", "YOLO-World", "OpenCV", "Chrome Extension", "Workflow Automation"]
     },
     {
       slug: "optim-lab-research",
-      title: "학부연구생 연구 활동",
+      title: "학부연구생 활동",
       category: "experience",
       date: "2025 - 2026",
       organization: "Optim Lab",
       role: "학부연구생",
-      description: "LLM 데이터 수집, 모델 분석, Knowledge Graph 연구 참여",
-      overview: "Optim Lab 학부연구생으로 활동하며 LLM 관련 데이터 수집과 모델 분석, Knowledge Graph 연구에 참여했습니다.",
+      description: "LLM 데이터 파이프라인, 모델 분석 및 Knowledge Graph 연구",
+      overview: "Optim Lab 학부연구생으로 LLM과 Knowledge Graph를 중심으로 여러 연구 과제에 참여했습니다. 연구실 자체 LLM 구축을 위한 데이터 수집 파이프라인을 담당하고 EXAONE의 학습 데이터·전처리·토크나이저 구조를 분석했으며, 이후 코인 백서를 활용한 Knowledge Graph 구축과 정보 추출 연구로 범위를 확장했습니다.",
       highlights: [
-        "LLM 관련 데이터 수집",
-        "모델 분석 업무 참여",
-        "Knowledge Graph 연구 참여"
+        "LLaMA 기반 연구실 자체 LLM 구축 과정에서 데이터 수집 파이프라인 담당",
+        "EXAONE의 학습 데이터셋 구성, 전처리 전략, 토크나이저 구조 분석 및 발표",
+        "코인 백서 기반 Knowledge Graph의 Triplet·Relation·클러스터링 구조 설계",
+        "NER 및 Relation Extraction 논문·데이터셋을 학습하고 Entity Regularization 구현에 참여"
       ],
-      keywords: ["LLM", "Model Analysis", "Knowledge Graph", "Research"]
+      keywords: ["LLM", "EXAONE", "Knowledge Graph", "NER", "Relation Extraction", "Research"]
     },
     {
       slug: "asset-volatility-forecasting",
-      title: "자산 변동성 예측 프로젝트",
+      title: "자산군별 변동성 구조 비교: GARCH, EGARCH, GJR-GARCH 모형의 분석",
       category: "experience",
       date: "2026",
       organization: "금융시계열",
       role: "",
-      description: "GARCH 계열 모형을 활용한 자산 변동성 분석 및 예측",
-      overview: "금융시계열 프로젝트로 GARCH 계열 모형을 활용해 자산의 변동성을 분석하고 예측했습니다.",
+      description: "코스피, 닛케이, 나스닥, 금의 GARCH 계열 모형 적합",
+      overview: "코스피, 닛케이, 나스닥, 금을 대상으로 자산군별 변동성 구조를 비교한 금융시계열 프로젝트입니다. 동일한 분석 틀에서 GARCH, EGARCH, GJR-GARCH 모형을 적합해 변동성의 지속성과 비대칭성을 비교하고, 자산별로 어떤 모형이 시장 움직임을 더 잘 설명하는지 해석했습니다.",
       highlights: [
-        "자산 시계열 데이터 분석",
-        "GARCH 계열 모형을 활용한 변동성 분석",
-        "변동성 예측 결과 해석"
+        "KOSPI·Nikkei·NASDAQ·Gold 시계열 데이터 전처리 및 수익률 기반 변동성 분석",
+        "GARCH, EGARCH, GJR-GARCH 모형을 동일 자산군에 적합해 변동성 구조 비교",
+        "2010~2012년 구간을 중심으로 시장 충격의 지속성과 비대칭 반응 해석",
+        "추가 분석으로 Markov-GARCH(국면전환) 모형을 적용해 시장 국면 변화 특성 탐색"
       ],
-      keywords: ["Time Series", "GARCH", "Volatility", "Forecasting"]
+      keywords: ["GARCH", "EGARCH", "GJR-GARCH", "Volatility", "Financial Time Series", "Markov-GARCH"]
     },
     {
       slug: "dynamic-correlation-analysis",
-      title: "동적상관계수 분석 프로젝트",
+      title: "EGARCH 기반 VaR 및 DCC-GARCH 리스크 분석",
       category: "experience",
       date: "2026",
       organization: "금융시계열",
       role: "",
-      description: "자산 간 동적 상관관계 분석, 데이터 전처리 및 결과 해석",
-      overview: "금융시계열 프로젝트로 자산 간 상관관계가 시간에 따라 어떻게 변화하는지 분석했습니다.",
+      description: "BTC, S&P 500, Gold 자산을 중심으로",
+      overview: "BTC, S&P 500, Gold를 중심으로 EGARCH 기반 VaR와 DCC-GARCH를 활용해 자산별 위험과 자산 간 동적 상관관계를 분석한 금융시계열 프로젝트입니다. 기존 분석의 데이터 전처리와 결과 해석 흐름을 유지하면서 변동성·VaR·동적 상관관계를 함께 정리했습니다.",
       highlights: [
-        "분석용 데이터 전처리",
-        "자산 간 동적 상관관계 분석",
-        "분석 결과 해석"
+        "BTC·S&P 500·Gold를 분석 대상으로 구성하고 시계열 데이터 전처리",
+        "EGARCH 기반 변동성 분석과 VaR 리스크 지표 확인",
+        "DCC-GARCH를 활용한 자산 간 동적 상관관계 분석",
+        "모형 결과를 자산별로 비교하고 리스크 관점에서 결과 해석"
       ],
-      keywords: ["Time Series", "Dynamic Correlation", "Data Preprocessing", "Analysis"]
+      keywords: ["EGARCH", "VaR", "DCC-GARCH", "Dynamic Correlation", "BTC", "Risk Analysis"]
     },
     {
       slug: "wsdm-spatial-data-analysis",
@@ -300,14 +305,15 @@ window.PORTFOLIO_DATA = {
       date: "2025",
       organization: "통계자료캡스톤디자인",
       role: "",
-      description: "공간데이터 전처리, 입지 요인 분석, 다기준 의사결정 방법론 적용",
-      overview: "통계자료캡스톤디자인 프로젝트에서 공간데이터를 전처리하고 입지 요인을 분석한 뒤 다기준 의사결정 방법론을 적용했습니다.",
+      description: "액티브 시니어 라이프스타일을 반영한 실버타운 최적 입지 분석",
+      overview: "액티브 시니어의 생활 특성을 반영해 실버타운의 최적 입지를 탐색한 캡스톤 디자인 프로젝트입니다. 녹지·치안 등 주요 입지 요인에 대한 선행연구와 통계 자료를 정리하고, 공간데이터를 전처리한 뒤 WSDM 기반 다기준 의사결정 방법론을 적용하는 분석 과정을 구성했습니다.",
       highlights: [
-        "공간데이터 전처리",
-        "입지 요인 분석",
-        "다기준 의사결정 방법론 적용"
+        "WSDM 기반 다기준 의사결정 방법론 파트 정리 및 분석 구조 설계",
+        "녹지·치안 등 실버타운 입지 요인의 선행연구와 통계적 근거 조사",
+        "공간데이터 전처리 및 분석용 CSV 데이터 구축",
+        "입지 요인을 통합해 후보 지역의 상대적 적합도를 비교하는 분석 수행"
       ],
-      keywords: ["Spatial Data", "Location Analysis", "MCDM", "Data Preprocessing"]
+      keywords: ["Spatial Data", "WSDM", "MCDM", "Location Analysis", "Data Preprocessing"]
     },
     {
       slug: "d-express-ontology-education-hackathon",
@@ -316,14 +322,15 @@ window.PORTFOLIO_DATA = {
       date: "2026.01.23",
       organization: "서울대학교 빅데이터혁신융합대학사업단",
       role: "D-EXPRESS CAMP 대상",
-      description: "온톨로지 및 지식그래프 기반 교육서비스 기획·개발 해커톤",
-      overview: "온톨로지 및 지식그래프를 기반으로 한 교육서비스를 기획·개발한 D-EXPRESS CAMP 해커톤 프로젝트입니다.",
+      description: "농업 교육 Knowledge Graph 기반 질의응답·정보 검색 서비스 ‘아삭이’",
+      overview: "서울대학교 Ontology & Knowledge Graph 과정의 해커톤에서 농업 교육 콘텐츠를 연결하는 Knowledge Graph 기반 질의응답·정보 검색 서비스 ‘아삭이’를 개발했습니다. 팀 내 Knowledge Graph 경험을 바탕으로 전체 그래프 구조와 온톨로지 방향을 설계하고, 교육 콘텐츠 간 연결 방식을 구체화했습니다.",
       highlights: [
-        "온톨로지 및 지식그래프 기반 교육서비스 기획",
-        "교육서비스 개발 프로젝트 수행",
-        "D-EXPRESS CAMP 대상 수상"
+        "서비스 전체 Knowledge Graph 구조와 Ontology 방향성 설계",
+        "교육 도메인의 Entity·Triplet·Relation 체계를 정의하고 데이터 연결 구조 구성",
+        "강의 콘텐츠 유사도 계산에 Jaccard Similarity를 적용해 연관 콘텐츠 탐색 기능 설계",
+        "팀 내 Knowledge Graph 기술 리딩을 맡아 프로젝트를 완성하고 D-EXPRESS CAMP 대상 수상"
       ],
-      keywords: ["Ontology", "Knowledge Graph", "Education Service", "Hackathon"]
+      keywords: ["Ontology", "Knowledge Graph", "Triplet", "Jaccard Similarity", "Education Service", "Hackathon"]
     },
     {
       slug: "trade-qqick",
@@ -332,14 +339,15 @@ window.PORTFOLIO_DATA = {
       date: "2026",
       organization: "Python, Streamlit, SQLite, AWS Lightsail",
       role: "",
-      description: "자산 종목 모니터링 사이트",
-      overview: "관심 자산 종목을 확인하고 모니터링할 수 있도록 만든 개인 웹 프로젝트입니다.",
+      description: "섹터별 밸류에이션과 GARCH 기반 진입가를 제공하는 개인용 스크리너",
+      overview: "국내외 종목을 섹터별 기준으로 저평가·고평가 판정하고 GARCH 계열 모형으로 진입가까지 계산하는 개인용 밸류에이션 스크리너입니다. 235개 종목과 26개 섹터 데이터를 매일 밤 배치로 갱신하며, 데이터 수집부터 모델 계산·저장·서비스 배포까지 혼자 운영하는 형태로 구축했습니다.",
       highlights: [
-        "Python과 Streamlit 기반 웹 애플리케이션 제작",
-        "SQLite를 활용한 데이터 관리",
-        "AWS Lightsail 환경에 서비스 배포"
+        "235개 종목·26개 섹터의 밸류에이션 데이터를 정기 수집하고 매일 밤 배치 갱신",
+        "섹터별 기준을 적용해 저평가·고평가를 판정하고 GARCH 계열 모형으로 진입가 계산",
+        "변동성 추정창은 2~3년, 극단 분위수 표본은 10년으로 분리해 추정 안정성 개선",
+        "Python·Streamlit·SQLite로 구현하고 AWS Lightsail에 배포해 개인 서비스로 운영"
       ],
-      keywords: ["Python", "Streamlit", "SQLite", "AWS Lightsail"],
+      keywords: ["Python", "Streamlit", "SQLite", "GARCH", "Valuation", "AWS Lightsail"],
       externalUrl: "https://trade.qqick.com"
     },
     {
@@ -349,12 +357,12 @@ window.PORTFOLIO_DATA = {
       date: "2026",
       organization: "Chrome Extension, Gemini API",
       role: "",
-      description: "Gemini API와 연동하여 Chrome Extension 형태로 제작",
-      overview: "YouTube 시청 중 번역 자막을 활용할 수 있도록 Gemini API와 연동한 Chrome Extension 형태로 제작한 개인 프로젝트입니다.",
+      description: "Gemini API와 연동한 YouTube 번역 자막 Chrome Extension",
+      overview: "YouTube 시청 중 번역 자막을 바로 활용할 수 있도록 만든 Chrome Extension 형태의 개인 프로젝트입니다. 브라우저 사용 흐름을 크게 바꾸지 않으면서 Gemini API를 연결해 번역 결과를 자막 형태로 제공하는 기능을 구현했습니다.",
       highlights: [
-        "Chrome Extension 형태로 기능 구현",
-        "Gemini API 연동",
-        "YouTube 시청 환경에서 번역 자막 기능 구성"
+        "Chrome Extension 구조로 YouTube 시청 화면에 번역 기능 통합",
+        "Gemini API를 연동해 자막 텍스트의 번역 처리 구성",
+        "기존 시청 흐름을 방해하지 않도록 브라우저 내부에서 사용할 수 있는 UI 형태로 구현"
       ],
       keywords: ["Chrome Extension", "Gemini API", "YouTube", "Translation"]
     }
