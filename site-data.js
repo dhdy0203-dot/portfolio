@@ -78,6 +78,14 @@ window.PORTFOLIO_DATA = {
     },
     {
       date: "2026",
+      title: "MLP 기반 Adaptive Speculative Decoding 연구",
+      projectSlug: "mlp-adaptive-speculative-decoding",
+      role: "",
+      organization: "LLM 추론 최적화 연구",
+      description: "Target hidden state를 활용한 MLP의 draft length 선택 및 학습 목적함수 비교"
+    },
+    {
+      date: "2026",
       title: "자산군별 변동성 구조 비교: GARCH, EGARCH, GJR-GARCH 모형의 분석",
       projectSlug: "asset-volatility-forecasting",
       role: "",
@@ -124,6 +132,13 @@ window.PORTFOLIO_DATA = {
       organization: "Python, Streamlit, SQLite, AWS Lightsail",
       description: "자산 종목 모니터링 사이트",
       url: "https://trade.qqick.com"
+    },
+    {
+      date: "2026",
+      title: "강의노트 기반 문제집 생성 에이전트",
+      projectSlug: "lecture-note-workbook-agent",
+      organization: "하네스 엔지니어링",
+      description: "강의노트를 분석해 개념·유형문제·독립 풀이·정답/해설을 단원별 PDF로 제작하는 멀티 에이전트 파이프라인"
     },
     {
       date: "2026",
@@ -272,19 +287,60 @@ window.PORTFOLIO_DATA = {
       organization: "Optim Lab",
       role: "학부연구생",
       description: "LLM 데이터 파이프라인, 모델 분석 및 Knowledge Graph 연구",
-      overview: "Optim Lab 학부연구생으로 LLM과 Knowledge Graph를 중심으로 여러 연구 과제에 참여했습니다. 연구실 자체 LLM 구축을 위한 데이터 수집 파이프라인을 담당하고 EXAONE의 학습 데이터·전처리·토크나이저 구조를 분석했으며, 이후 코인 백서를 활용한 Knowledge Graph 구축과 정보 추출 연구로 범위를 확장했습니다.",
+      overview: "Optim Lab 학부연구생으로 LLM과 Knowledge Graph를 중심으로 여러 연구 과제에 참여했습니다. 연구실 자체 LLM 구축을 위한 데이터 수집 파이프라인을 담당하고 EXAONE의 학습 데이터·전처리·토크나이저 구조를 분석했으며, 이후 코인 백서를 활용한 Knowledge Graph 구축과 정보 추출 연구로 범위를 확장했습니다. MLP-Mixer·Swin Transformer·Token Pooling 논문을 리뷰하고, 문학 텍스트의 대사 임베딩과 감정 기반 그래프 분석 코드도 작성했습니다.",
       detail: [
         "연구실 자체 LLM 구축 프로젝트에서는 LLaMA 기반 모델 학습을 위한 데이터 수집 파이프라인을 담당했습니다. 모델 구조 자체뿐 아니라 실제 학습 데이터가 어떤 방식으로 수집·정리되어 들어가는지를 경험했고, EXAONE 모델의 학습 데이터셋 구성, 전처리 전략, 토크나이저 구조를 분석해 연구실 내부 발표를 진행했습니다.",
         "이후 연구 범위를 Knowledge Graph로 확장해 코인 백서를 기반으로 정보를 구조화하는 작업에 참여했습니다. 문서에서 어떤 Entity와 Relation을 추출할지, Triplet을 어떤 형태로 정의할지, 코인을 어떤 구조로 클러스터링할지 설계하면서 그래프 기반 정보 연결 구조와 Vertical LLM 활용 가능성을 함께 탐구했습니다.",
-        "Edge-Star 연구활동에서는 NER(Named Entity Recognition)과 Relation Extraction 관련 논문과 데이터셋을 학습하고, Entity Regularization 논문 리뷰와 코드 구현에도 참여했습니다. 여러 연구 주제를 거치며 논문을 읽고 구현으로 연결하는 과정, 데이터 구조를 정의하는 과정, 그리고 연구 결과를 설명 가능한 형태로 정리하는 경험을 쌓았습니다."
+        "Edge-Star 연구활동에서는 NER(Named Entity Recognition)과 Relation Extraction 관련 논문과 데이터셋을 학습하고, Entity Regularization 논문 리뷰와 코드 구현에도 참여했습니다. 여러 연구 주제를 거치며 논문을 읽고 구현으로 연결하는 과정, 데이터 구조를 정의하는 과정, 그리고 연구 결과를 설명 가능한 형태로 정리하는 경험을 쌓았습니다.",
+        "Vision 분야 논문 리뷰에서는 MLP-Mixer의 Token-Mixing·Channel-Mixing MLP 구조, Swin Transformer의 계층적 표현과 Shifted Window Attention, Token Pooling의 군집 기반 토큰 축소 방식을 분석했습니다. 각 논문의 구조·핵심 아이디어·실험 결과를 발표 자료로 정리했고, 아래에 논문별 대표 슬라이드 3장씩을 첨부했습니다.",
+        "텍스트 기반 그래프 실습에서는 『King Lear』 등장인물 대사를 Sentence-BERT로 임베딩해 유사도 그래프를 구성하고, GCN 기반 그래프 표현 학습과 클러스터링 코드를 작성했습니다. 또한 장면·인물별 감정 점수를 구하면서 중립 대사를 제외하고, 감정 유사도 그래프에 Modularity 기반 커뮤니티 탐지를 적용하는 분석 코드를 작성했습니다."
       ],
       highlights: [
         "LLaMA 기반 연구실 자체 LLM 구축 과정에서 데이터 수집 파이프라인 담당",
         "EXAONE의 학습 데이터셋 구성, 전처리 전략, 토크나이저 구조 분석 및 발표",
         "코인 백서 기반 Knowledge Graph의 Triplet·Relation·클러스터링 구조 설계",
-        "NER 및 Relation Extraction 논문·데이터셋을 학습하고 Entity Regularization 구현에 참여"
+        "NER 및 Relation Extraction 논문·데이터셋을 학습하고 Entity Regularization 구현에 참여",
+        "MLP-Mixer·Swin Transformer·Token Pooling 논문 리뷰 및 발표 자료 제작",
+        "『King Lear』 대사 임베딩·감정 분석과 그래프 클러스터링 구현 코드 작성"
       ],
-      keywords: ["LLM", "EXAONE", "Knowledge Graph", "NER", "Relation Extraction", "Research"]
+      media: [
+        { src: "assets/projects/optim-lab-research/mlp-mixer-01.jpg", alt: "MLP-Mixer 논문 리뷰: 모델 전체 아키텍처", caption: "MLP-Mixer 논문 리뷰 ① | Patch Embedding과 Mixer Layer로 구성된 전체 아키텍처 (발표 자료 13쪽)" },
+        { src: "assets/projects/optim-lab-research/mlp-mixer-02.jpg", alt: "MLP-Mixer 논문 리뷰: Token-Mixing MLP", caption: "MLP-Mixer 논문 리뷰 ② | 서로 다른 패치의 정보를 섞는 Token-Mixing MLP (발표 자료 17쪽)" },
+        { src: "assets/projects/optim-lab-research/mlp-mixer-03.jpg", alt: "MLP-Mixer 논문 리뷰: 벤치마크 결과", caption: "MLP-Mixer 논문 리뷰 ③ | 논문에서 보고한 이미지 분류 벤치마크 결과 (발표 자료 23쪽)" },
+        { src: "assets/projects/optim-lab-research/swin-transformer-01.jpg", alt: "Swin Transformer 논문 리뷰: 모델 구조", caption: "Swin Transformer 논문 리뷰 ① | 계층적 Transformer와 Patch Merging 구조 (발표 자료 13쪽)" },
+        { src: "assets/projects/optim-lab-research/swin-transformer-02.jpg", alt: "Swin Transformer 논문 리뷰: Shifted Window Self-Attention", caption: "Swin Transformer 논문 리뷰 ② | Shifted Window Self-Attention과 윈도우 경계 처리 (발표 자료 19쪽)" },
+        { src: "assets/projects/optim-lab-research/swin-transformer-03.jpg", alt: "Swin Transformer 논문 리뷰: 객체 탐지 성능 비교", caption: "Swin Transformer 논문 리뷰 ③ | 객체 탐지 적용과 기존 모델 성능 비교 (발표 자료 29쪽)" },
+        { src: "assets/projects/optim-lab-research/token-pooling-01.jpg", alt: "Token Pooling 논문 리뷰: 토큰 축소 구조", caption: "Token Pooling 논문 리뷰 ① | Transformer 블록 사이에 토큰 축소를 적용하는 구조 (발표 자료 9쪽)" },
+        { src: "assets/projects/optim-lab-research/token-pooling-02.jpg", alt: "Token Pooling 논문 리뷰: 토큰 기반 이미지 복원 데모", caption: "Token Pooling 논문 리뷰 ② | 대표 토큰을 활용한 이미지 재구성 데모 (발표 자료 22쪽)" },
+        { src: "assets/projects/optim-lab-research/token-pooling-03.jpg", alt: "Token Pooling 논문 리뷰: 정확도와 연산량 비교", caption: "Token Pooling 논문 리뷰 ③ | 계산 효율과 정확도 간 비교 실험 (발표 자료 29쪽)" }
+      ],
+      keywords: ["LLM", "EXAONE", "Knowledge Graph", "NER", "Relation Extraction", "MLP-Mixer", "Swin Transformer", "Token Pooling", "Sentence-BERT", "Research"]
+    },
+    {
+      slug: "mlp-adaptive-speculative-decoding",
+      title: "MLP 기반 Adaptive Speculative Decoding 연구",
+      category: "experience",
+      date: "2026",
+      organization: "LLM 추론 최적화 연구",
+      role: "",
+      description: "Target hidden state 기반 MLP로 상태별 draft length를 선택하는 학습 목적함수 비교",
+      overview: "Speculative decoding에서 draft model이 한 번에 제안할 토큰 수(draft length)를 생성 상태에 따라 조절하는 연구입니다. 기존 target model의 hidden state를 입력으로 사용하는 소형 MLP를 구성하고, 여섯 가지 학습 목적함수의 길이 선택 성능과 추론 비용을 비교했습니다. Gap-weighted pairwise ranking은 고정 길이 8 대비 오프라인 token당 비용을 3.21% 줄였으나, 실제 생성 지연 시간 단축까지 이어지지는 않았습니다.",
+      detail: [
+        "Speculative decoding은 작은 draft model이 여러 토큰을 미리 제안하고 target model이 이를 함께 검증해 생성 효율을 높이는 방법입니다. 하지만 draft length가 너무 짧으면 검증 기회가 줄고, 너무 길면 채택되지 않는 토큰의 제안 비용이 커집니다. 이에 이미 계산된 5,120차원 target hidden state를 재사용해 후보 길이 {1, 2, 4, 8, 16} 중 비용이 낮을 것으로 예상되는 값을 선택하도록 MLP를 설계했습니다. 모델은 LayerNorm·GELU·은닉 폭 128·5차원 출력층으로 구성해 추가 target forward pass 없이 길이를 결정합니다.",
+        "길이 후보별 실제 비용을 token당 시간(T/K)으로 정의하고, absolute·relative regression, hard·soft classification, uniform·gap-weighted pairwise ranking의 여섯 학습 목적함수를 비교했습니다. Qwen3.6-27B-FP8의 native MTP 환경에서 600개 프롬프트로부터 63,764개 상태를 수집하고, 후보별 측정을 통해 목적함수에 따른 비용 차이를 평가했습니다. 다양한 모델 폭과 seed를 비교한 결과, 상태별 비용 차이가 큰 후보 쌍에 더 높은 가중치를 부여하는 gap-weighted pairwise ranking이 가장 낮은 오프라인 비용을 보였습니다.",
+        "오프라인 평가에서 gap-weighted pairwise ranking은 Fixed-8의 26.602 ms/token 대비 25.750 ms/token으로 3.21% 비용을 절감했습니다. 동일 프롬프트 안에서 길이 선택 순서를 바꾼 대조군과 비교했을 때도 상태에 맞춘 선택이 비용을 1.69% 추가로 절감했습니다. 반면 별도의 실제 생성 평가에서는 Fixed-8의 평균 지연 시간이 2.082초, 첫 상태 MLP 2.110초, 매 단계 MLP 2.149초로 나타나, 오프라인 비용 절감이 실제 지연 시간 감소로 연결되지는 않았습니다. 이를 통해 학습 목적함수뿐 아니라 온라인 실행 비용까지 함께 평가해야 한다는 한계를 확인했습니다."
+      ],
+      highlights: [
+        "Target hidden state(5,120차원)와 후보 길이 {1, 2, 4, 8, 16}를 활용한 MLP 기반 동적 draft length 선택",
+        "Regression·Classification·Pairwise Ranking 등 6개 학습 목적함수 비교 및 600개 프롬프트·63,764개 상태 기반 오프라인 평가",
+        "Gap-weighted pairwise ranking으로 Fixed-8 대비 오프라인 token당 비용 3.21% 절감 (26.602 → 25.750 ms/token)",
+        "실제 생성 지연 시간은 Fixed-8 2.082초 대비 2.110~2.149초로 증가해, 오프라인 지표와 실제 효율의 차이 확인"
+      ],
+      media: [
+        { src: "assets/projects/mlp-adaptive-speculative-decoding/01-training-objective-comparison.png", alt: "여섯 가지 MLP 학습 목적함수별 token당 비용 및 길이 예측 성능 비교 표", caption: "제공한 연구 문서 표 1 | 6개 학습 목적함수의 오프라인 비용 비교: Gap-weighted ranking에서 25.750 ms/token, Fixed-8 대비 3.21% 절감" },
+        { src: "assets/projects/mlp-adaptive-speculative-decoding/02-real-generation-latency.png", alt: "Fixed-8, 첫 상태 MLP, 매 단계 MLP의 실제 생성 지연 시간 비교 그래프", caption: "제공한 연구 문서 그림 1 | 실제 생성 평균 지연 시간은 Fixed-8 2.082초, 첫 상태 MLP 2.110초, 매 단계 MLP 2.149초" }
+      ],
+      keywords: ["Speculative Decoding", "Adaptive Draft Length", "MLP", "Target Hidden State", "Pairwise Ranking", "Inference Optimization"]
     },
     {
       slug: "asset-volatility-forecasting",
@@ -369,6 +425,39 @@ window.PORTFOLIO_DATA = {
       keywords: ["Spatial Data", "WSDM", "MCDM", "Location Analysis", "Data Preprocessing"]
     },
     {
+      slug: "db-erm-reverse-mortgage-proposal",
+      title: "영국 ERM을 통한 민간 역모기지 상품 제안",
+      category: "hackathon",
+      date: "",
+      organization: "DB 금융 공모전",
+      role: "",
+      description: "한국형 민간 역모기지의 잠재수요·NNEG 보증비용·보증료 수익성을 분석한 상품 제안",
+      overview: "고령층의 자산은 부동산에 집중되어 있지만 생활에 필요한 현금흐름은 부족한 문제(Asset Rich, Cash Poor)에 주목했습니다. 영국의 ERM(Equity Release Mortgage, 주택지분 유동화형 역모기지)을 한국에 적용하는 민간 금융상품을 제안하고, 잠재수요 추정부터 NNEG(No Negative Equity Guarantee) 가치평가, 보증료 설계, 가상 포트폴리오 시뮬레이션까지 연결해 도입 가능성을 분석했습니다. 공모전 보고서에서는 국내 잠재수요를 약 9.2만 가구로 추정했으며, 가입자의 권익 보호와 보험사의 장기 손익을 함께 고려하는 상품 설계 방향을 제시했습니다.",
+      detail: [
+        "고령화가 빠르게 진행되는 한국에서는 일정 규모 이상의 주택을 소유하고도 은퇴 후 현금소득이 부족한 가구가 존재합니다. 주택담보대출은 정기적인 소득과 원리금 상환 능력을 요구하고, 다운사이징은 이사·거래비용과 기존 거주지에 대한 선호가 장애가 될 수 있습니다. 공적 주택연금도 담보주택의 가격·지급방식 등의 제약이 있어 고가 주택을 보유한 고령층의 다양한 자금 수요를 모두 충족하기 어렵습니다. 이 문제에서 출발해 주택을 계속 보유·거주하면서 자산의 일부를 현금화할 수 있는 영국형 ERM의 국내 도입을 검토했습니다.",
+        "제안한 ERM의 핵심은 평생 거주권, 유연한 인출 방식, 그리고 무부채보증(NNEG)입니다. 대출 원리금이 시간이 흐르며 누적되더라도 주택 매각대금보다 대출 잔액이 커지면 가입자나 상속인에게 초과 부채를 청구하지 않도록 설계합니다. 반대로 주택 매각대금이 대출잔액보다 크다면 차액을 상속할 수 있습니다. 따라서 소비자에게는 자산 유동화와 상속의 선택지를 제공하지만, 금융기관에는 집값 하락·장수·대출잔액 누적에 따른 보증 손실 위험이 남습니다. 국내 도입 가능성을 검토하려면 수요뿐 아니라 이 위험을 계량화할 필요가 있다고 판단했습니다.",
+        "첫 번째 분석은 상품의 잠재수요 추정이었습니다. 가계금융복지조사 마이크로데이터 18,314가구에 주택 시세 18억 원 초과, 가구주 연령 55세 이상, 금융자산 유동성 부족, 기존 담보대출 비율 30% 이하의 조건을 순서대로 적용했습니다. 조건에 해당한 86개 표본가구에 표본가중치를 적용하자 전국 단위의 1차 잠재수요는 약 91,979가구로 추정됐습니다. 부트스트랩 기반 95% 신뢰구간은 약 6.9만~11.6만 가구로, 민간 역모기지를 검토할 수 있는 잠재 고객군의 규모를 정량적으로 제시했습니다. 다만 이는 실제 가입자 수나 계약 전환율을 뜻하는 수치는 아닙니다.",
+        "두 번째 분석에서는 NNEG를 보험사가 부담하는 일종의 풋옵션성 보증위험으로 해석했습니다. 대출 만기에 누적 대출잔액이 담보 주택 가치보다 클 때 발생할 손실을 Black-76 형태의 풋옵션 평가식과 탈퇴확률을 이용해 현재가치로 환산했습니다. 주택가격은 실세계 GBM의 기대상승률을 반영했고, 통계청 생명표를 이용한 사망률 외에 요양시설 입소와 조기상환도 고려하는 다중 탈퇴모형을 구성했습니다. 서울 25개 구의 주택가격지수로 지역별 변동성을 계산하여 하나의 평균 변동성을 모든 주택에 적용하는 단순화도 피하려고 했습니다.",
+        "이후 진입연령, LTV, 무위험이자율, 롤업금리, 주택가격상승률, 주택가격 변동성, 탈퇴요인 등 주요 가정에 따른 NNEG의 민감도를 비교했습니다. 예를 들어 55세 진입자의 LTV를 20%에서 50%로 높인 시나리오에서는 NNEG/초기주택가격 비율이 0.95%에서 27.35%로 크게 증가했습니다. 같은 LTV라도 진입 연령에 따라 대출의 존속기간이 달라지므로, 상품은 단순한 단일 대출 한도보다 가입 연령과 담보인정비율을 연동하는 방식으로 설계할 필요가 있음을 확인했습니다. 아래 첫 번째 이미지는 보고서에 수록된 LTV별 NNEG 민감도 분석 결과입니다.",
+        "세 번째 분석에서는 보증위험을 반영한 수익구조를 만들기 위해 표준형(A), 저부담형(B), 초기집중형(C), 연납집중형(D), 무초기형(E)의 다섯 가지 보증료 구조를 비교했습니다. 초기 보증료와 매년 납입하는 보증료를 조합하고, 탈퇴확률로 가중한 수입의 현재가치에서 NNEG 비용을 차감하는 방식으로 보험사의 예상 손익을 계산했습니다. 보고서의 대표 사례(초기 주택가격 15.3억 원, LTV 30%)에서는 모든 구조의 예상 보증료 수입 현재가치가 NNEG 비용을 상회했고, 무초기형(E) 약 1억 7,679만 원, 연납집중형(D) 약 1억 5,324만 원, 표준형(A) 약 1억 5,023만 원의 순이익을 산출했습니다. 이는 해당 가정에 따른 시뮬레이션 결과이며 확정 수익을 뜻하지는 않습니다.",
+        "보증료만 높이면 수익성이 개선되는 것처럼 보여도 가입자의 초기 부담과 조기 탈퇴 위험이 함께 달라집니다. 보고서는 무초기형과 연납집중형이 수익률 측면에서는 유리할 수 있지만 조기 탈퇴 시 실제 보증료 수입이 예상보다 적어질 수 있다고 지적했습니다. 이 때문에 보험사의 안정성과 소비자의 부담을 함께 고려할 때 표준형 또는 연납집중형을 현실적인 선택지로 검토했습니다. 아래 두 번째 이미지는 동일한 보증위험을 가정했을 때 보증료 구조에 따라 보험사 순이익이 달라지는 모습을 보여줍니다.",
+        "마지막으로 개별 계약의 평가에서 확장해 가상 계약 1,000건을 설정하고 몬테카를로 시뮬레이션 1,000회를 수행했습니다. 계약별 성별·진입연령·주택가격 그룹과 서울 25개 구의 변동성을 반영한 결과, 기대 연 손실은 경과 26년차부터 양(+)의 값이 발생하고 41년차에 약 1.02억 원으로 최대치에 이르는 장기 위험 특성을 보였습니다. 이 결과를 통해 초기 보증료 수익성뿐 아니라 수십 년 뒤 집중될 수 있는 손실과 준비금의 중요성을 검토했습니다. 동시에 가상 포트폴리오 및 실세계 GBM 가정, 영국 통계를 활용한 요양시설 입소율, 지수 기반 변동성의 한계를 명시하고, 한국형 데이터로 모형을 보완할 필요성을 제안했습니다."
+      ],
+      highlights: [
+        "영국 ERM·NNEG 구조를 검토하고 한국 고령층의 Asset Rich, Cash Poor 문제를 위한 민간 역모기지 상품 제안",
+        "18,314개 표본가구의 단계별 필터링과 가중치·부트스트랩을 통해 잠재수요 약 91,979가구 추정",
+        "Black-76 형태의 NNEG 가치평가와 생존·요양시설 입소·조기상환을 반영한 다중 탈퇴확률 모형 구성",
+        "서울 25개 구의 주택가격 변동성 및 LTV·진입연령·금리·주택가격 가정별 보증위험 민감도 분석",
+        "5가지 초기·연 보증료 조합의 현재가치 및 보험사 손익 비교로 상품 설계 대안 제시",
+        "가상 계약 1,000건·몬테카를로 1,000회로 장기 NNEG 기대 손실과 준비금 필요성 검토"
+      ],
+      media: [
+        { src: "assets/projects/db-erm-reverse-mortgage-proposal/01-ltv-nneg-sensitivity.png", alt: "진입연령과 담보인정비율에 따른 NNEG 민감도 곡선", caption: "DB 금융 공모전 보고서 그림 8 | 고정 LTV와 고령 우대형 LTV 시나리오별 NNEG 민감도 비교" },
+        { src: "assets/projects/db-erm-reverse-mortgage-proposal/02-guarantee-fee-profitability.png", alt: "보증료 구조 다섯 가지의 보험사 예상 순이익 비교 막대그래프", caption: "DB 금융 공모전 보고서 그림 16 | 표준형·저부담형·초기집중형·연납집중형·무초기형의 예상 순이익 비교" }
+      ],
+      keywords: ["DB 금융 공모전", "ERM", "Reverse Mortgage", "NNEG", "Black-76", "LTV", "Monte Carlo", "Risk Pricing", "Insurance"]
+    },
+    {
       slug: "d-express-ontology-education-hackathon",
       title: "아삭이 - 농업 교육 지식그래프 기반 질의응답 및 정보 검색 서비스",
       category: "hackathon",
@@ -423,6 +512,40 @@ window.PORTFOLIO_DATA = {
       ],
       keywords: ["Python", "Streamlit", "SQLite", "GARCH", "Valuation", "AWS Lightsail"],
       externalUrl: "https://trade.qqick.com"
+    },
+    {
+      slug: "lecture-note-workbook-agent",
+      title: "강의노트 기반 문제집 생성 에이전트",
+      category: "side-projects",
+      date: "2026",
+      organization: "하네스 엔지니어링",
+      role: "개인 프로젝트",
+      description: "강의노트의 수학 내용과 단원 순서를 보존하며 문제·풀이·해설을 생성하고 PDF로 조판하는 멀티 에이전트 자동화",
+      overview: "강의노트에 담긴 개념과 증명을 문제를 풀면서 더 깊이 공부하고 싶어 시작한 개인 프로젝트입니다. 강의노트 PDF를 단원별로 해석한 뒤 개념 설명, 대표예제, 유형문제, 독립 풀이, 검수, 최종 PDF 조판까지 연결하는 멀티 에이전트 파이프라인을 구성했습니다. 특히 하네스 엔지니어링을 적용해 각 에이전트의 작업 범위와 승인 기준을 고정하고, 수식 렌더링 및 페이지 검사를 결합해 긴 문제집에서도 구성과 출력의 일관성을 유지하도록 설계했습니다.",
+      detail: [
+        "처음에는 강의노트를 읽는 것만으로는 개념을 충분히 익히기 어렵다는 생각에서 출발했습니다. 원본에 있는 공식·조건·증명과 개념의 흐름을 유지하면서 직접 풀어볼 확인·변형·발전문제, 대표예제, 유형문제와 상세 해설을 만들고 싶었습니다. 단순한 요약이나 무작위 문제 생성이 아니라, 강의노트 내용을 실제 학습용 문제집으로 변환하는 것이 목표였습니다.",
+        "제작 과정은 ① 강의노트 입력 ② 이미지 기반 원본 전사와 목차·단원 경계 추출 ③ 개념 정리 및 문제 출제·독립 풀이·수학 검수 ④ 디자인·수식 렌더링·PDF 품질 검사 ⑤ 승인된 단원 PDF 병합 순서로 구성했습니다. 서로 다른 에이전트가 원본 분석, 개념·문항 집필, 독립 풀이, 내용 검수, 출력 검사 역할을 맡으며, 앞 단계의 산출물이 검수 기준을 충족해야 다음 단계로 넘어가도록 연결했습니다. 아래 첫 번째 이미지는 이 전체 구조를 요약한 파이프라인입니다.",
+        "하네스 엔지니어링은 일관성을 확보하기 위한 핵심 설계였습니다. AGENTS.md와 README.md에 역할별 책임, 단원 분할 규칙, 문항 구성 계약, 작업 순서, 검수·반려·재작업 기준을 명시했습니다. 예를 들어 원본의 장·절·개별 주제를 임의로 합치지 않고, 논리적 개념 설명마다 대표예제와 난이도별 기본문항을 대응시키며, 풀이 담당은 출제자가 예상한 답을 보지 않고 독립적으로 풀도록 했습니다. 문항의 오류나 원본 누락을 발견하면 해당 단계만 수정하고 다시 검수하도록 설계했습니다.",
+        "PDF 제작에서는 한글 본문과 LaTeX 수식을 구분해 조판하고, 실제 글꼴과 대표 수식의 사전 출력 검사, 수식 렌더링 결과 캐시, 단원별 PDF 이미지 검사 등을 적용했습니다. 글자 잘림·겹침·수식 깨짐·누락을 검사하고 결과물의 파일 및 페이지 해시로 변경 여부를 추적했습니다. 또한 체크포인트와 재개 절차를 두어 긴 제작 과정에서 이미 승인한 단원을 불필요하게 새로 만들지 않고, 문제가 발생한 부분만 재출력·재검수하도록 구성했습니다.",
+        "제작 결과, 약 200페이지에 가까운 분량의 문제집으로 확장한 경우에도 단원 구조, 개념·문항·해설의 구성 규칙, 지면 디자인과 수식 출력 기준의 일관성이 유지되는 것을 확인했습니다. 특히 생성 모델의 응답에만 형식을 맡기는 대신 명시적인 작업 계약, 역할 분리, 독립 검수, 렌더링 검사를 연결하는 방식이 장문 산출물의 품질 관리에 효과적임을 경험했습니다. 아래에는 원본 강의노트의 일부와 이를 바탕으로 만든 Rao–Cramer 하한 단원 문제집의 본문·연습문제·해설 페이지를 예시로 첨부했습니다. 첨부된 8쪽 PDF는 제작 과정의 초안 예시이며 약 200페이지 전체 결과물은 아닙니다."
+      ],
+      highlights: [
+        "강의노트를 기반으로 단원·개념·문항·증명 연습·정답 및 상세 해설까지 이어지는 멀티 에이전트 파이프라인 설계",
+        "AGENTS.md에 역할 분리·단원 순서 보존·문항 수 및 유형·독립 풀이·검수 기준을 고정한 하네스 엔지니어링 적용",
+        "LaTeX 수식 렌더링, 페이지 이미지 검사, 체크포인트·해시 기반 재사용과 실패 단계 재검수 구성",
+        "약 200페이지 규모의 문제집 제작에서도 단원 구조·문항 구성·해설 형식·디자인 일관성이 유지됨을 확인",
+        "실제 강의노트의 Rao–Cramer 하한 부분을 개념 설명·문제·증명·정답/해설로 변환한 예시 제작"
+      ],
+      media: [
+        { src: "assets/projects/lecture-note-workbook-agent/01-multi-agent-pipeline.png", alt: "강의노트에서 단원별 문제집까지 이어지는 5단계 멀티 에이전트 제작 파이프라인", caption: "전체 구조 | 원본 전사·단원 분할 → 개념 및 문제 집필 → 독립 풀이·검수 → PDF 렌더링·품질관리 → 단원별 병합" },
+        { src: "assets/projects/lecture-note-workbook-agent/02-source-lecture-note.png", alt: "Rao–Cramer 하한 정리와 증명이 작성된 원본 수리통계학 강의노트 일부", caption: "입력 자료 | Rao–Cramer 하한 정리와 증명이 담긴 원본 강의노트 일부" },
+        { src: "assets/projects/lecture-note-workbook-agent/03-concept-summary.png", alt: "강의노트로 생성한 Rao–Cramer 하한 개념 정리 페이지", caption: "문제집 예시 ① | 원본 정리의 가정·공식·증명 흐름을 정리한 개념 페이지 (첨부 초안 2쪽)" },
+        { src: "assets/projects/lecture-note-workbook-agent/04-concept-practice.png", alt: "Rao–Cramer 하한의 대표예제와 난이도별 연습문제 페이지", caption: "문제집 예시 ② | 대표예제·MAPL CORE·확인/변형/발전 문제 (첨부 초안 3쪽)" },
+        { src: "assets/projects/lecture-note-workbook-agent/05-proof-exercise.png", alt: "Rao–Cramer 하한 수식의 증명 연습 지면", caption: "문제집 예시 ③ | 강의노트의 수식 전개를 직접 연습하는 증명 문제 (첨부 초안 4쪽)" },
+        { src: "assets/projects/lecture-note-workbook-agent/06-problem-types.png", alt: "Rao–Cramer 하한 응용 및 난이도별 유형문제 페이지", caption: "문제집 예시 ④ | 주요 풀이 유형별 BASIC·NORMAL·TOUGH 문제 (첨부 초안 6쪽)" },
+        { src: "assets/projects/lecture-note-workbook-agent/07-answers-explanations.png", alt: "Rao–Cramer 하한의 정답과 상세 풀이 페이지", caption: "문제집 예시 ⑤ | 개별 문항의 정답과 독립 풀이·검수 기반 상세 해설 (첨부 초안 7쪽)" }
+      ],
+      keywords: ["Harness Engineering", "Multi-Agent", "LLM", "Workflow Orchestration", "PDF Rendering", "LaTeX", "Quality Assurance", "Mathematics Education"]
     },
     {
       slug: "youtube-live-translation-subtitles",
