@@ -69,6 +69,14 @@ window.PORTFOLIO_DATA = {
 
   experience: [
     {
+      date: "",
+      title: "영국 ERM을 통한 민간 역모기지 상품 제안",
+      projectSlug: "db-erm-reverse-mortgage-proposal",
+      role: "",
+      organization: "DB 금융 공모전",
+      description: "한국형 민간 역모기지의 잠재수요·NNEG 보증비용·보증료 수익성을 분석한 상품 제안"
+    },
+    {
       date: "2025 - 2026",
       title: "학부연구생 활동",
       projectSlug: "optim-lab-research",
@@ -427,7 +435,7 @@ window.PORTFOLIO_DATA = {
     {
       slug: "db-erm-reverse-mortgage-proposal",
       title: "영국 ERM을 통한 민간 역모기지 상품 제안",
-      category: "hackathon",
+      category: "experience",
       date: "",
       organization: "DB 금융 공모전",
       role: "",
