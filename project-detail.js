@@ -26,7 +26,28 @@
   $("#detail-role").textContent = project.role || "";
   $("#detail-role").hidden = !project.role;
   $("#detail-description").textContent = project.description || "";
-  $("#detail-overview").textContent = project.overview || project.description || "";
+  $("#detail-overview").textContent = project.overview || project.description || "";\n
+  // 강의노트 기반 문제집 생성 에이전트: Overview 상단 이미지
+  if (project.slug === "lecture-note-workbook-agent") {
+    const overview = document.querySelector("#detail-overview");
+    const image = document.createElement("img");
+
+    image.src = "assets/projects/lecture-note-workbook-agent/08-pixel-agents.png";
+    image.alt = "Pixel Agents 멀티 에이전트 협업 작업 화면";
+    image.loading = "lazy";
+
+    Object.assign(image.style, {
+      display: "block",
+      width: "100%",
+      maxWidth: "900px",
+      height: "auto",
+      marginBottom: "28px",
+      borderRadius: "10px"
+    });
+
+    overview.parentNode.insertBefore(image, overview);
+  }
+
   const detailParagraphs = Array.isArray(project.detail)
     ? project.detail
     : (project.detail ? [project.detail] : []);
