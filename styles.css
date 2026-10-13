@@ -573,6 +573,9 @@ footer p{margin:0}.credit{opacity:.72}
 .detail-content{padding:12px 64px 64px}
 .detail-section{padding:40px 0;border-bottom:1px solid var(--line)}
 .detail-section:last-child{border-bottom:0;padding-bottom:0}
+/* Intro image: displayed only for projects declaring introImage. */
+.detail-intro-image{margin:0 0 30px;}
+.detail-intro-image img{display:block;width:100%;height:auto;}
 .detail-section-label{
   margin:0 0 4px;
   color:var(--coral);

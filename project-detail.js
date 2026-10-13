@@ -26,28 +26,16 @@
   $("#detail-role").textContent = project.role || "";
   $("#detail-role").hidden = !project.role;
   $("#detail-description").textContent = project.description || "";
-  $("#detail-overview").textContent = project.overview || project.description || "";\n
-  // 강의노트 기반 문제집 생성 에이전트: Overview 상단 이미지
-  if (project.slug === "lecture-note-workbook-agent") {
-    const overview = document.querySelector("#detail-overview");
-    const image = document.createElement("img");
-
-    image.src = "assets/projects/lecture-note-workbook-agent/08-pixel-agents.png";
-    image.alt = "Pixel Agents 멀티 에이전트 협업 작업 화면";
-    image.loading = "lazy";
-
-    Object.assign(image.style, {
-      display: "block",
-      width: "100%",
-      maxWidth: "900px",
-      height: "auto",
-      marginBottom: "28px",
-      borderRadius: "10px"
-    });
-
-    overview.parentNode.insertBefore(image, overview);
+  $("#detail-overview").textContent = project.overview || project.description || "";
+  if (project.introImage) {
+    const introFigure = document.createElement("figure");
+    introFigure.className = "detail-intro-image";
+    const introImg = document.createElement("img");
+    introImg.src = project.introImage.src;
+    introImg.alt = project.introImage.alt || "";
+    introFigure.appendChild(introImg);
+    $("#detail-overview").closest(".detail-section").prepend(introFigure);
   }
-
   const detailParagraphs = Array.isArray(project.detail)
     ? project.detail
     : (project.detail ? [project.detail] : []);
@@ -59,7 +47,7 @@
     mediaSection.hidden = false;
     $("#detail-media").innerHTML = media.map(item => `
       <figure class="detail-media-item">
-        <a href="${item.src}" target="_blank" rel="noreferrer" aria-label="${item.alt || item.caption || '프로젝트 이미지'} 크게 보기">
+        <a href="${item.href || item.src}" target="_blank" rel="noreferrer" aria-label="${item.alt || item.caption || '프로젝트 이미지'} 크게 보기">
           <img src="${item.src}" alt="${item.alt || ''}" loading="lazy" />
         </a>
         ${item.caption ? `<figcaption>${item.caption}</figcaption>` : ''}
@@ -74,5 +62,9 @@
   if (project.externalUrl) {
     $("#detail-actions").innerHTML = `
       <a class="button" href="${project.externalUrl}" target="_blank" rel="noreferrer">Visit Project ↗</a>`;
+  }
+  if (project.downloadUrl) {
+    $("#detail-actions").insertAdjacentHTML("beforeend", `
+      <a class="button" href="${project.downloadUrl}" download>워크북 PDF 다운로드 ↓</a>`);
   }
 })();

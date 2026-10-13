@@ -529,29 +529,27 @@ window.PORTFOLIO_DATA = {
       organization: "하네스 엔지니어링",
       role: "개인 프로젝트",
       description: "강의노트의 수학 내용과 단원 순서를 보존하며 문제·풀이·해설을 생성하고 PDF로 조판하는 멀티 에이전트 자동화",
+      introImage: { src: "assets/projects/lecture-note-workbook-agent/08-pixel-agents.png.png", alt: "Pixel Agents 환경에서 강의노트 문제집 제작 에이전트들이 협업하는 작업 화면" },
+      downloadUrl: "assets/projects/lecture-note-workbook-agent/Mann_Whitney_Wilcoxon_Workbook.pdf",
       overview: "강의노트에 담긴 개념과 증명을 문제를 풀면서 더 깊이 공부하고 싶어 시작한 개인 프로젝트입니다. 강의노트 PDF를 단원별로 해석한 뒤 개념 설명, 대표예제, 유형문제, 독립 풀이, 검수, 최종 PDF 조판까지 연결하는 멀티 에이전트 파이프라인을 구성했습니다. 특히 하네스 엔지니어링을 적용해 각 에이전트의 작업 범위와 승인 기준을 고정하고, 수식 렌더링 및 페이지 검사를 결합해 긴 문제집에서도 구성과 출력의 일관성을 유지하도록 설계했습니다.",
       detail: [
         "처음에는 강의노트를 읽는 것만으로는 개념을 충분히 익히기 어렵다는 생각에서 출발했습니다. 원본에 있는 공식·조건·증명과 개념의 흐름을 유지하면서 직접 풀어볼 확인·변형·발전문제, 대표예제, 유형문제와 상세 해설을 만들고 싶었습니다. 단순한 요약이나 무작위 문제 생성이 아니라, 강의노트 내용을 실제 학습용 문제집으로 변환하는 것이 목표였습니다.",
-        "제작 과정은 ① 강의노트 입력 ② 이미지 기반 원본 전사와 목차·단원 경계 추출 ③ 개념 정리 및 문제 출제·독립 풀이·수학 검수 ④ 디자인·수식 렌더링·PDF 품질 검사 ⑤ 승인된 단원 PDF 병합 순서로 구성했습니다. 서로 다른 에이전트가 원본 분석, 개념·문항 집필, 독립 풀이, 내용 검수, 출력 검사 역할을 맡으며, 앞 단계의 산출물이 검수 기준을 충족해야 다음 단계로 넘어가도록 연결했습니다. 아래 첫 번째 이미지는 이 전체 구조를 요약한 파이프라인입니다.",
+        "제작 과정은 ① 강의노트 입력 ② 이미지 기반 원본 전사와 목차·단원 경계 추출 ③ 개념 정리 및 문제 출제·독립 풀이·수학 검수 ④ 디자인·수식 렌더링·PDF 품질 검사 ⑤ 승인된 단원 PDF 병합 순서로 구성했습니다. 서로 다른 에이전트가 원본 분석, 개념·문항 집필, 독립 풀이, 내용 검수, 출력 검사 역할을 맡으며, 앞 단계의 산출물이 검수 기준을 충족해야 다음 단계로 넘어가도록 연결했습니다. 아래 프로젝트 이미지 섹션의 첫 번째 이미지는 이 전체 구조를 요약한 파이프라인입니다.",
         "하네스 엔지니어링은 일관성을 확보하기 위한 핵심 설계였습니다. AGENTS.md와 README.md에 역할별 책임, 단원 분할 규칙, 문항 구성 계약, 작업 순서, 검수·반려·재작업 기준을 명시했습니다. 예를 들어 원본의 장·절·개별 주제를 임의로 합치지 않고, 논리적 개념 설명마다 대표예제와 난이도별 기본문항을 대응시키며, 풀이 담당은 출제자가 예상한 답을 보지 않고 독립적으로 풀도록 했습니다. 문항의 오류나 원본 누락을 발견하면 해당 단계만 수정하고 다시 검수하도록 설계했습니다.",
         "PDF 제작에서는 한글 본문과 LaTeX 수식을 구분해 조판하고, 실제 글꼴과 대표 수식의 사전 출력 검사, 수식 렌더링 결과 캐시, 단원별 PDF 이미지 검사 등을 적용했습니다. 글자 잘림·겹침·수식 깨짐·누락을 검사하고 결과물의 파일 및 페이지 해시로 변경 여부를 추적했습니다. 또한 체크포인트와 재개 절차를 두어 긴 제작 과정에서 이미 승인한 단원을 불필요하게 새로 만들지 않고, 문제가 발생한 부분만 재출력·재검수하도록 구성했습니다.",
-        "제작 결과, 약 200페이지에 가까운 분량의 문제집으로 확장한 경우에도 단원 구조, 개념·문항·해설의 구성 규칙, 지면 디자인과 수식 출력 기준의 일관성이 유지되는 것을 확인했습니다. 특히 생성 모델의 응답에만 형식을 맡기는 대신 명시적인 작업 계약, 역할 분리, 독립 검수, 렌더링 검사를 연결하는 방식이 장문 산출물의 품질 관리에 효과적임을 경험했습니다. 아래에는 원본 강의노트의 일부와 이를 바탕으로 만든 Rao–Cramer 하한 단원 문제집의 본문·연습문제·해설 페이지를 예시로 첨부했습니다. 첨부된 8쪽 PDF는 제작 과정의 초안 예시이며 약 200페이지 전체 결과물은 아닙니다."
+        "제작 결과, 약 200페이지에 가까운 분량의 문제집으로 확장한 경우에도 단원 구조, 개념·문항·해설의 구성 규칙, 지면 디자인과 수식 출력 기준의 일관성이 유지되는 것을 확인했습니다. 특히 생성 모델의 응답에만 형식을 맡기는 대신 명시적인 작업 계약, 역할 분리, 독립 검수, 렌더링 검사를 연결하는 방식이 장문 산출물의 품질 관리에 효과적임을 경험했습니다. 아래에는 Mann–Whitney–Wilcoxon Procedure 원본 강의노트 1쪽과 이를 바탕으로 제작한 17쪽 분량의 단원별 문제집을 예시로 첨부했습니다. 문제집에는 개념 정리, 확인·변형·발전문제, 증명 연습, 유형별 문제, 정답과 상세 해설이 포함되어 있습니다. 해당 PDF는 단원 예시이며 약 200페이지 전체 결과물은 아닙니다."
       ],
       highlights: [
         "강의노트를 기반으로 단원·개념·문항·증명 연습·정답 및 상세 해설까지 이어지는 멀티 에이전트 파이프라인 설계",
         "AGENTS.md에 역할 분리·단원 순서 보존·문항 수 및 유형·독립 풀이·검수 기준을 고정한 하네스 엔지니어링 적용",
         "LaTeX 수식 렌더링, 페이지 이미지 검사, 체크포인트·해시 기반 재사용과 실패 단계 재검수 구성",
         "약 200페이지 규모의 문제집 제작에서도 단원 구조·문항 구성·해설 형식·디자인 일관성이 유지됨을 확인",
-        "실제 강의노트의 Rao–Cramer 하한 부분을 개념 설명·문제·증명·정답/해설로 변환한 예시 제작"
+        "Mann–Whitney–Wilcoxon Procedure 강의노트 1쪽을 개념·문제·증명 연습·정답/해설이 포함된 17쪽 PDF 문제집으로 변환한 예시 제작"
       ],
       media: [
         { src: "assets/projects/lecture-note-workbook-agent/01-multi-agent-pipeline.png", alt: "강의노트에서 단원별 문제집까지 이어지는 5단계 멀티 에이전트 제작 파이프라인", caption: "전체 구조 | 원본 전사·단원 분할 → 개념 및 문제 집필 → 독립 풀이·검수 → PDF 렌더링·품질관리 → 단원별 병합" },
-        { src: "assets/projects/lecture-note-workbook-agent/02-source-lecture-note.png", alt: "Rao–Cramer 하한 정리와 증명이 작성된 원본 수리통계학 강의노트 일부", caption: "입력 자료 | Rao–Cramer 하한 정리와 증명이 담긴 원본 강의노트 일부" },
-        { src: "assets/projects/lecture-note-workbook-agent/03-concept-summary.png", alt: "강의노트로 생성한 Rao–Cramer 하한 개념 정리 페이지", caption: "문제집 예시 ① | 원본 정리의 가정·공식·증명 흐름을 정리한 개념 페이지 (첨부 초안 2쪽)" },
-        { src: "assets/projects/lecture-note-workbook-agent/04-concept-practice.png", alt: "Rao–Cramer 하한의 대표예제와 난이도별 연습문제 페이지", caption: "문제집 예시 ② | 대표예제·MAPL CORE·확인/변형/발전 문제 (첨부 초안 3쪽)" },
-        { src: "assets/projects/lecture-note-workbook-agent/05-proof-exercise.png", alt: "Rao–Cramer 하한 수식의 증명 연습 지면", caption: "문제집 예시 ③ | 강의노트의 수식 전개를 직접 연습하는 증명 문제 (첨부 초안 4쪽)" },
-        { src: "assets/projects/lecture-note-workbook-agent/06-problem-types.png", alt: "Rao–Cramer 하한 응용 및 난이도별 유형문제 페이지", caption: "문제집 예시 ④ | 주요 풀이 유형별 BASIC·NORMAL·TOUGH 문제 (첨부 초안 6쪽)" },
-        { src: "assets/projects/lecture-note-workbook-agent/07-answers-explanations.png", alt: "Rao–Cramer 하한의 정답과 상세 풀이 페이지", caption: "문제집 예시 ⑤ | 개별 문항의 정답과 독립 풀이·검수 기반 상세 해설 (첨부 초안 7쪽)" }
+        { src: "assets/projects/lecture-note-workbook-agent/09-mww-source-preview.png", href: "assets/projects/lecture-note-workbook-agent/Mann_Whitney_Wilcoxon_A4_1page.pdf", alt: "Mann–Whitney–Wilcoxon Procedure 원본 강의노트 PDF 열기", caption: "입력 자료 | Mann–Whitney–Wilcoxon Procedure 원본 강의노트 (1쪽 PDF, 이미지를 누르면 원본 PDF 열기)" },
+        { src: "assets/projects/lecture-note-workbook-agent/10-mww-workbook-preview.png", href: "assets/projects/lecture-note-workbook-agent/Mann_Whitney_Wilcoxon_Workbook.pdf", alt: "Mann–Whitney–Wilcoxon Procedure 완성 워크북 PDF 열기", caption: "생성 결과 | 원본 강의노트로 제작한 17쪽 문제집 PDF (이미지를 누르면 전체 PDF 열기 · 상단 버튼에서 다운로드 가능)" }
       ],
       keywords: ["Harness Engineering", "Multi-Agent", "LLM", "Workflow Orchestration", "PDF Rendering", "LaTeX", "Quality Assurance", "Mathematics Education"]
     },
